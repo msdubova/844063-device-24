@@ -1,7 +1,7 @@
-# Личный проект «Девайс»
+﻿# Личный проект «Девайс»
 
 * Студент: [Olga Dubova](https://up.htmlacademy.ru/htmlcss/24/user/844063).
-* Наставник: `Неизвестно`.
+* Наставник: [Кирилл Петров](https://htmlacademy.ru/profile/frozik).
 
 ---
 
