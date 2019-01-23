@@ -6,78 +6,75 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-<div class="page-header">
-  <div class="container">
-    <div class="container-left">
+<header>
+  <div class="layout-positioner">
     <div class="logo">
       <img src="img/logo.png" alt="device-logo">
     </div>
-    <div class="search">
-      <input type="search" value="Поиск по сайту">
-    </div>
-    <div class="catalog">Каталог товаров
-      <a href="#"> + </a> 
-          <ul class="popup_catalog">
-            <li>
-              <a href="virtual-reality">Виртуальная реальность</a>
-            </li>
-            <li>
-                <a href="selfie-monopods">Моноподы для селфи</a>
-            </li>
-            <li>
-                <a href="action-cams">Экшн-камеры</a>
-            </li>
-            <li>
-                <a href="fitness-trackers">Фитнес-браслеты</a>
-            </li>
-            <li>
-                <a href="smart-watches">Умные часы</a>
-            </li>
-            <li>
-                <a href="quadrocoters">Квадрокоптеры</a>
-            </li>    
-            </ul>
-    </div>
-</div>
-<div class="container-right">
-    <div class="login">Войти 
-      <!-- Вход будет осуществляться в всплявающем окне или переход на страницу входа? -->
-      <label for="name">
-        <input type="text" name="name" id="name"  placeholder="Введите имя пользователя" autocomplete="on" required autofocus>
-        </label>
-      <label for="password">
-        <input type="password" id="password"  placeholder="Введите пароль" autocomplete="on" required>
-        </label>
-    </div>
-    <div class="compare">
-      <!-- Сравнение в новом окне ?  -->
-      <a href="#" >Сравнить</a>>
-    </div>
-    <div class="cart">
-      <!--Корзина в новом окне наверняка -->
-      <a href="#">Корзина</a>
-    </div>
-    <div class="nav-menu">
+    <div class="header-top">
       <ul>
         <li>
-          <a href="#delivery">Доставка</a>
+          <img src="img/search.png">
+          <input type="search" value="Поиск по сайту">
         </li>
         <li>
-          <a href="#warranty">Гарантия</a>
+          <a href="#"><img src="img/cart.png">Корзина</a>
+        </li> 
+        <li>
+          <a href="#"><img src="img/compare.png">Сравнить</a>
         </li>
         <li>
-          <a href="#contacts">Контакты</a>
+          <a href="#"><img src="img/login.png">Войти</a>
         </li>
+       
+        
       </ul>
     </div>
-    </div>
-  
-    </div>
-  </div>
+    <nav>
+      <ul class="header-navigation">
+          <li>
+              <a href="#catalog">Каталог товаров
+              <ul class="hidden-menu">
+                  <li>
+                    <a href="#virtual-reality">Виртуальная реальность</a>
+                  </li>
+                  <li>
+                    <a href="#selfie-monopods">Моноподы для селфи</a>
+                  </li>
+                  <li>
+                    <a href="#action-cams">Экшн-камеры</a>
+                  </li>
+                  <li>
+                    <a href="#fitness-trackers">Фитнес-браслеты</a>
+                  </li>
+                  <li>
+                    <a href="#smart-watches">Умные часы</a>
+                  </li>
+                  <li>
+                    <a href="#quadrocoters">Квадрокоптеры</a>
+                  </li> 
+              </ul>
+              </a>
+          </li>
+          <li>
+            <a href="#delivery">Доставка</a>
+          </li>
+          <li>
+            <a href="#warranty">Гарантия</a>
+          </li>
+          <li>
+            <a href="#contacts">Контакты</a>
+          </li>
+      </ul>
+    </nav>
+    <svg>
+      <rect x="280px" y="20px" width="100px" height="7px"fill="red">
+    </svg>
+   </div> 
+</header>
+<section>
 
-<div class="product">
-
-</div>
+</section>
 <div class="categories">
 <ul>
   <li></li>
