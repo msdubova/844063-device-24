@@ -6,97 +6,144 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-<header>
-  <div class="layout-positioner">
-    <div class="logo">
-      <img src="img/logo.png" alt="device-logo">
-    </div>
-    <div class="header-top">
-      <ul>
-        <li>
-          <img src="img/search.png">
-          <input type="search" value="Поиск по сайту">
-        </li>
-        <li>
-          <a href="#"><img src="img/cart.png">Корзина</a>
-        </li> 
-        <li>
-          <a href="#"><img src="img/compare.png">Сравнить</a>
-        </li>
-        <li>
-          <a href="#"><img src="img/login.png">Войти</a>
-        </li>
-       
-        
-      </ul>
-    </div>
-    <nav>
-      <ul class="header-navigation">
-          <li>
-              <a href="#catalog">Каталог товаров
-              <ul class="hidden-menu">
-                  <li>
-                    <a href="#virtual-reality">Виртуальная реальность</a>
-                  </li>
-                  <li>
-                    <a href="#selfie-monopods">Моноподы для селфи</a>
-                  </li>
-                  <li>
-                    <a href="#action-cams">Экшн-камеры</a>
-                  </li>
-                  <li>
-                    <a href="#fitness-trackers">Фитнес-браслеты</a>
-                  </li>
-                  <li>
-                    <a href="#smart-watches">Умные часы</a>
-                  </li>
-                  <li>
-                    <a href="#quadrocoters">Квадрокоптеры</a>
-                  </li> 
-              </ul>
-              </a>
-          </li>
-          <li>
-            <a href="#delivery">Доставка</a>
-          </li>
-          <li>
-            <a href="#warranty">Гарантия</a>
-          </li>
-          <li>
-            <a href="#contacts">Контакты</a>
-          </li>
-      </ul>
-    </nav>
-    <svg>
-      <rect x="280px" y="20px" width="100px" height="7px"fill="red">
-    </svg>
-   </div> 
+    <header>
+        <div class="layout-positioner">
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <div class="top">
+            <!-- <ul class="top">
+                <li><input type="search" value="Поиск по сайту"></li>
+                <li><a href="#">Войти</a></li>
+                <li><a href="#">Сравнить</a></li>
+                <li><a href="#">Корзина</a></li>
+            </ul> -->
+            <ul>
+                    <li>
+                      <img src="img/search.png">
+                      <input type="search" value="Поиск по сайту">
+                    </li>
+                    <li>
+                      <a href="#"><img src="img/cart.png">Корзина</a>
+                    </li> 
+                    <li>
+                      <a href="#"><img src="img/compare.png">Сравнить</a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="img/login.png">Войти</a>
+                    </li>
+                   
+                    
+                  </ul>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Каталог товаров <font>+</font></a>
+                    <!-- <ul class="hidden-menu">
+                        <li class="col1"><a href="#">Виртуальная реальность</a></li>
+                        <li class="col1"><a href="#">Моноподы для селфи</a></li>
+                        <li class="col1"><a href="#">Экшн-камеры</a></li>
+                        <li class="col2"><a href="#">Фитнес-браслеты</a></li>
+                        <li class="col2"><a href="#">Умные часы</a></li>
+                        <li class="col3"><a href="#">Квадрокоптеры</a></li> 
+                    </ul> -->
+                <table class="hidden-menu">
+                  <tr>
+                  <td><a href="#">Виртуальная реальность</a></td>
+                  <td><a href="#">Фитнес-браслеты</a></td>
+                  <td><a href="#">Квадрокоптеры</a></td>
+                  </tr>
+                  <tr>
+                  <td><a href="#">Моноподы для селфи</a></td>
+                  <td><a href="#">Умные часы</a></td>
+                  </tr>
+                  <tr>
+                  <td><a href="#">Экшн-камеры</a></td>
+                  </tr>
+              </table>
+                </li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+<svg>
+    <rect>
+</rect>
+</svg>
+</div>
 </header>
-<section>
-
-</section>
-<div class="categories">
-<ul>
-  <li></li>
-</ul>
-</div>>
-<div class="courusel">
-<div class="delivery" id="delivery">
-
-</div>
-<div class="warranty" id="warranty">
-</div>
-<div class="credit" id="credit">
-  </div>
-</div>
-<div class="logos">
-</div>
-<div class="Aboutus">
-  </div>
-<div class="contacts" id="contacts">
-
-</div>
-<div class="page-footer">
-  </div>
+    <main>
+        <div class="layout-positioner">
+        <section class="product-karusel">
+            <div class="slider-1">
+                <img src="img/slider1.png">
+                <h2>Делай селфи как Бен Стиллер!</h2>
+                <text>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 киллограмм.</text>
+                <a href="#">Подробнее</a>
+                <table>
+                    <th>
+                        <td>8,5 м</td>
+                        <td>5 кг</td>
+                        <td>Карбон</td>
+                    </th>
+                    <tr>
+                        <td>Длина палки</td>
+                        <td>Вес палки</td>
+                        <td>Материал</td>
+                    </tr>
+                </table>
+                <!-- И три кнопки слайдера - всатвлю когда пойму что это за кнопки -->
+                <!-- Вставить порядковы номер -->
+            </div>
+            <div class="slider-2">
+                <img src="img/slider2.png">
+                <h2>Худеем правильно!</h2>
+                <text>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</text>
+                <a href="#">Подробнее</a>
+                <table>
+                    <th>
+                        <td>48 часов</td>
+                        </th>
+                    <tr>                   
+                        <td>Без подзарядки</td>
+                    </tr>
+                </table>
+                <!-- Вставить кнопки слайдера -->
+                <!-- Вставить порядковы номер -->
+            </div>
+            <div class="slider-3">
+                <img src="img/slider3.png">
+                <h2>Порхает как бабочка,жалит как пчела!</h2>
+                <text>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</text>
+                <a href="#">Подробнее</a>
+                <table>
+                        <th>
+                            <td>800 м</td>
+                            <td>50 м</td>
+                        </th>
+                        <tr>
+                            <td>Дальность полета</td>
+                            <td>Радиус поражения</td>   
+                        </tr>
+                    </table>
+                <!-- Вставить кнопки слайдера -->
+                <!-- Вставить порядковы номер -->
+            </div>
+        </section>
+        </div>
+        <section class="categories">
+        </section>
+        <section class="service-karusel">
+        </section>
+        <div class="brands">
+        </div>
+        <section class="about-us">
+        </section>
+        <section class="contacts">
+        </section>
+    </main>
+    <footer>
+    </footer> 
   </body>
-</html>
+  </html>
