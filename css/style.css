@@ -133,3 +133,15 @@ font-family: 'Times New Roman', Times, serif;
 font-size: 18px;
 color: rgba(0,0,0,0.3);
 }
+
+.product-karusel {
+    width: 300%;
+
+
+}
+.product-karusel div {
+    float: left;
+}
+.slider-inner {
+    overflow: hidden;
+}
