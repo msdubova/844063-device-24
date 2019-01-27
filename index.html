@@ -6,8 +6,22 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-      <!-- Это новый документ -->
-      <header>
+        <header>
+          <section class="modal write-us">
+            <h2 class="hidden"></h2>
+            <button class="button close">
+              <img src="#" alt="Закрыть">
+            </button>
+            <form class="popup write-us" action="#" method="get" novalidate>
+              <label for="name">Ваше имя:</label>
+              <input type="text" name="name-surname" id="name" placeholder="Имя Фамилия" autofocus autocomplete required>
+              <label for="mail">Ваш e-mail:</label>
+              <input type="email" name="e-mail" id="mail" placeholder="email@example.com" autocomplete required>
+              <label for="text">Текст письма</label>
+              <textarea id="text" name="letter" minlength="20" required placeholder="В свободной форме"></textarea>
+              <button class="button" type="submit">Отправить</button>
+            </form>
+          </section>
         <div class="container">
 
             <div class="logo-container">
@@ -47,7 +61,7 @@
             </nav>
 
         </div>
-      </header>
+    </header>
 
     <main>
         <div class="container">
@@ -70,6 +84,7 @@
                             <td>Вес палки</td>
                             <td>Материал</td>
                         </tr>
+                    </table>
                 </div>
 
                 <div class="slider-2">
@@ -83,7 +98,8 @@
                         </th>
                         <tr>
                             <td>Без подзарядки</td>
-                        </tr>   
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="slider-3">
@@ -100,13 +116,14 @@
                             <td>50 м</td>
                             <td>Радиус поражения</td>
                         </tr>
+                    </table>
                 </div>
 
                 <ul class="slider-btn">
                     <li><input type="radio" checked id="slider1" name="slider button"></li>
                     <li><input type="radio" id="slider2" name="slider button"></li>
                     <li><input type="radio" id="slider3" name="slider button"></li>
-                </ul>   
+                </ul>
             </article>
 
             <section class="main-catalog">
@@ -139,11 +156,11 @@
                                 Товар, не дом, конечно же.</dd>
                     </dt>
                     <dt><a class="link" href="#">Кредит</a>
-                        <dd>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные 
+                        <dd>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные
                                 условия кредита. Выгодные для нашего банка, разумеется.</dd>
                     </dt>
                 </dl>
-                    
+
             </section>
 
             <section class="brands">
@@ -154,8 +171,8 @@
                     <li><a href="#"><img src="#" alt="gopro_logo"></a></li>
                     <li><a href="#"><img src="#" alt="vive_logo"></a></li>
                 </ul>
-            </section>   
-            
+            </section>
+
             <section class="info">
                 <h2>О нас</h2>
                 <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
@@ -165,7 +182,7 @@
                     <li><a href="#">Деловые линии</a></li>
                     <li><a href="#">Автотрейдинг</a></li>
                     <li><a href="#">ЖелДорЭкспедиция</a></li>
-                </ul> 
+                </ul>
                 <a class="link" href="#">Подробнее о нас</a>
             </section>
 
@@ -175,15 +192,15 @@
                 <a href="#"><img src="#" alt="map"></a>
                 <img class="hidden" src="#" alt="map">
                 <a class="link" href="#">Напишите нам</a>
-            </section>          
+            </section>
         </div>
     </main>
-    
+
     <footer>
         <div class="container">
             <div class="logo-container">
-                <a href="#device"><img src="img/logo.png" alt="logo"></a>    
-            </div>      
+                <a href="#device"><img src="img/logo.png" alt="logo"></a>
+            </div>
             <div class="footer-first-line">
                 <ul class="header-functional">
                     <li><a href="#">Войти</a>
@@ -195,7 +212,7 @@
             <div class="footer-info adress">
                 г. Москва, ул. Строителей, 15
             </div>
-        
+
             <nav class="footer-second-line">
                 <ul class="footer-navigation">
                     <li><a href="#">Доставка</a></li>
@@ -206,7 +223,7 @@
 
             <div class="footer-info phone">
                 Тел.: +7 (495) 495-95-95
-            </div>  
+            </div>
 
             <ul class="social">
                 <li><a href="#"><img src="#" alt="facebook"></a></li>
