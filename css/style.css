@@ -5,13 +5,13 @@
     line-height: 30px;
     font-family: "Open Sans Light", "Arial", sans-serif;
     color: #464646;
-    background-color: white;   
+    background-color: white;
 }
 
 a {
     font-family: "Gilroy ExtraBold", "Arial", sans-serif;
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
 
 ul {
@@ -21,4 +21,16 @@ ul {
 
 li {
     list-style: none;
+} */
+/* .hidden {
+  position: absolute;
+  width: 1160px;
+  height: 129 px;
+  margin:0;
+  border:0;
+  padding:0;
+  clip: rect(0,0 0,1160 129,1160 129,0);
+  background-color: #f7e296;
+  overflow: hidden;
+
 } */
