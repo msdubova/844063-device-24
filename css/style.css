@@ -1,36 +1,404 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    line-height: 30px;
-    font-family: "Open Sans Light", "Arial", sans-serif;
-    color: #464646;
-    background-color: white;
+@font-face {
+  font-family: "gilroylight";
+  src: url("../fonts/gilroylight.woff2") format('woff2'),
+       url("../fonts/gilroylight.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gilroyextrabold";
+  src: url("../fonts/gilroyextrabold.woff2") format('woff2'),
+       url("../fonts/gilroyextrabold.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "open_sanslight";
+  src: url("../fonts/opensanslight.woff2") format('woff2'),
+       url("../fonts/opensanslight.woff2") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "open_sans";
+  src: url("../fonts/opensans.woff2") format('woff2'),
+       url("../fonts/opensans.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "open_sanslight", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 a {
-    font-family: "Gilroy ExtraBold", "Arial", sans-serif;
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    list-style: none;
-} */
-/* .hidden {
+.visually-hidden {
   position: absolute;
-  width: 1160px;
-  height: 129 px;
-  margin:0;
-  border:0;
-  padding:0;
-  clip: rect(0,0 0,1160 129,1160 129,0);
-  background-color: #f7e296;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
   overflow: hidden;
+}
 
-} */
+.link {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  background-color: rgb(240, 197, 46);
+/* пока не додумалась как сделать эту полосу фоном */
+  }
+
+/* Стили хедера */
+
+.header-navigation {
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.3);
+
+  background-color: rgb(247, 226, 150);
+}
+
+.header-user-navigation,
+.header-site-navigation {
+  list-style: none;
+}
+
+.header-user-navigation a,
+.header-site-navigation a {
+  color: rgb(0, 0, 0);
+}
+
+.header-user-navigation a:hover,
+.header-user-navigation a:focus,
+.header-site-navigation a:hover,
+.header-site-navigation a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-user-navigation a:active,
+.header-user-navigation a:visited,
+.header-site-navigation a:active,
+.header-site-navigation a:visited {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.header-user-navigation input[type="search"] {
+  color: rgba(0, 0, 0, 0.3);
+  background: inherit;
+  border: none;
+}
+
+.header-user-navigation input[type="search"]:hover {
+  color: rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+.header-user-navigation input[type="search"]:focus {
+  color: rgb(0, 0, 0);
+  outline: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.header-site-navigation a {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.header-site-navigation a:hover,
+.header-site-navigation a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-site-navigation a:active,
+.header-site-navigation a:visited {
+  color: rgba(0, 0, 0, 0.3);
+}
+/* вставить иконки  - псевдоклассы */
+.header-catalog {
+  list-style: none;
+}
+
+.header-catalog a{
+  font-family: "open_sanslight";
+  font-size: 15px;
+  line-height: 36px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+/* Стили main slider*/
+
+.container {
+  color: rgb(70, 70, 70);
+}
+
+.slider-navigation,
+.slider-list{
+  list-style: none;
+
+}
+
+.slider-button button {
+    padding: 6px;
+
+    font-size: 0px;
+    color: red;
+
+    background: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius:50%;
+    box-shadow: none;
+    outline: none;
+  }
+
+.slider-item {
+  display: flex;
+}
+
+.slider-item h3 {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 47px;
+  line-height: 56px;
+  color: rgb(0, 0, 0);
+}
+
+.product-features {
+  display: table;
+  border: none;
+  border-collapse: separate;
+}
+
+.product-features td {
+  font-family: "open_sanslight", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  color: rgb(70, 70, 70);
+  padding: 5px 20px;
+}
+.product-features th {
+  font-family: "gilroylight", "Arial", sans-serif;
+  font-size:  36px;
+  font-weight: 300;
+  line-height: 48px;
+  color: rgb(0, 0, 0);
+  padding: 5px 20px;
+}
+
+/* Стили Каталога в main  */
+
+.main-catalog .catalog {
+  list-style: none;
+  display: flex;
+}
+
+ .catalog li {
+  margin-right: 40px;
+
+  width: 160px;
+  height: 160px;
+
+  background-color: rgb(247, 226, 150);
+  background-position: -60% 0;
+}
+
+.catalog a {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+}
+/* нужно вставить всевдоэлементы - картинки и опустить текст подписей */
+
+/* Стилизация второго слайдера - сервисов */
+
+.services {
+  background-color: rgb(229, 229, 229);
+}
+
+.service-description {
+  display: flex;
+}
+
+.service-description h3 {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+  color: rgb(0, 0, 0);
+  }
+
+.service-navigation,
+.service-description {
+  list-style: none;
+}
+.service-button  button{
+  box-shadow: none;
+/* как сбросить стандартную кнопку? */
+}
+
+/* стилизация партнеров */
+
+.brands-list {
+  list-style: none;
+  display: flex;
+}
+
+.brandlist-item a{
+  filter: grayscale(100%) opacity(0.2);
+}
+
+.brandlist-item a:hover,
+.brandlist-item a:focus {
+  filter: none;
+}
+.info h2,
+.contacts h2 {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+  color: rgb(0, 0, 0);
+  }
+
+.couriers a {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+  color: rgb(0, 0, 0);
+ }
+
+.half-width {
+  width: 50%;
+}
+
+/* стилизация футера */
+
+.main-footer {
+  background-color: rgb(70, 70, 70);
+}
+
+.footer-logo img {
+  fill: rgb(240, 197, 46);
+}
+/* как перезалить цвет у svg через сss */
+
+.footer-navigation {
+  color: rgb(255, 255, 255);
+}
+
+.footer-navigation a {
+  color: rgb(255, 255, 255);
+}
+
+.footer-navigation ul {
+  list-style: none;
+}
+
+.footer-user-navigation a{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-user-navigation a:hover,
+.footer-user-navigation a:focus{
+  color: rgb(255, 255, 255);
+}
+
+.footer-user-navigation a:active,
+.footer-user-navigation a:visited {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-site-navigation a {
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.footer-site-navigation a:hover,
+.footer-site-navigation a:focus {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-site-navigation a:active,
+.footer-site-navigation a:visited {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-social-item a {
+  opacity: 0.3;
+}
+
+.footer-social-item a:hover,
+.footer-social-item a:focus {
+  opacity: 0.6;
+}
+
+.footer-social-item a:active,
+.footer-social-item a:visited {
+  opacity: 0.1;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+  opacity: 0.6;
+}
+
+.footer-copyright a:active,
+.footer-copyright a:visited {
+  opacity: 0.3;
+}
+
+/* модальные окна */
+
+.modal label{
+  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+
+}
+.modal input,
+.modal textarea{
+  border:none;
+  background-color: rgb(242, 242, 242);
+}
+.write-us {
+  width: 960px;
+  height: 553px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
+}
+
+.map {
+  width: 960px;
+  height: 559px;
+  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
+  }
+

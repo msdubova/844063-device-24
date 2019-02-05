@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <html lang="ru">
     <title>HTML Academy: Девайс</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
       <nav class="header-navigation">
-        <a class="main-header-logo" href="index.html">
-          <img src="img/icons/logo-device.svg" width="163" height="35" alt="Логотип интернет-магазина Device">
+        <a class="header-logo" href="index.html">
+          <img src="img/icons/logo-device.svg" alt="Логотип интернет-магазина Device" width="163" height="35">
         </a>
         <ul class="header-user-navigation">
           <li>
             <form action="https://echo.htmlacademy.ru" method="get">
-              <input type="search" name="site-search" placeholder="Поиск по сайту" autofocus>
+              <input type="search" name="site-search" value="Поиск по сайту" autofocus>
             </form>
           </li>
           <li class="login-link"><a href="login-link.html">Войти</a></li>
@@ -23,7 +24,8 @@
           <li><a href="#">Корзина</a></li>
         </ul>
         <ul class="header-site-navigation">
-          <li><a href="device-catalog.html">Каталог товаров <span>+</span></a>
+          <li><a href="device-catalog.html">Каталог товаров</a>
+            <!-- Убрала спан с плюсом - добавлю его как псевдоэлемент -->
             <ul class="header-catalog hidden">
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
@@ -44,17 +46,14 @@
       <h1 class="visually-hidden">Интернет-магазин Device</h1>
       <article class="product-slider">
         <h2 class="visually-hidden">Рекомендуем</h2>
-        <ul class="slider-navigation">
-          <li class="slider-btn slider-btn-1" ><input type="radio" checked id="slider1" name="slider-button" aria-label="Слайдер номер 1">1</li>
-          <li class="slider-btn slider-btn-2"><input type="radio" id="slider2" name="slider-button" aria-label="Слайдер номер 2">2</li>
-          <li class="slider-btn slider-btn-3"><input type="radio" id="slider3" name="slider-button" aria-label="Слайдер номер 3">3</li>
-        </ul>
         <ul class="slider-list">
           <li class="slider-item monopod">
             <img class="product-photo" src="img/content/slider-1.png" alt="Селфи-палка" width="384" height="486">
             <div class="product-description">
-              <h3 class="product-slogan">Делай селфи, как Бен Стиллер!</h3>
-              <p class="product-info">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+              <h3>Делай селфи, <br>
+                как Бен Стиллер!</h3>
+              <p class="product-info">Самая длинная палка для селфи доступна в нашем магазине.<br>
+                 Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
               <a class="link" href="#">Подробнее</a>
               <table class="product-features">
                 <tr>
@@ -73,7 +72,8 @@
           <li class="slider-item tracker">
             <img class="product-photo" src="img/content/slider-2.png" alt="Фитнес-браслет" width="345" height="485">
             <div class="product-description">
-              <h3 class="product-slogan">Худеем правильно!</h3>
+              <h3>Худеем<br>
+                правильно!</h3>
               <p class="product-info">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
               <a class="link" href="#">Подробнее</a>
               <table class="product-features">
@@ -89,7 +89,8 @@
           <li class="slider-item copter">
             <img class="product-photo" src="img/content/slider-3.png" alt="Квадрокоптер" width="526" height="334">
             <div class="product-description">
-              <h3 class="product-slogan">Порхает как бабочка,жалит как пчела!</h3>
+              <h3>Порхает как бабочка,<br>
+                жалит как пчела!</h3>
               <p class="product-info">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
               <a class="link" href="#">Подробнее</a>
               <table class="product-features">
@@ -105,10 +106,21 @@
             </div>
           </li>
         </ul>
+        <ul class="slider-navigation">
+          <li class="slider-button" >
+            <button type="button pushed" aria-label="Слайдер номер 1">1</button>
+          </li>
+          <li class="slider-button" >
+            <button type="button" aria-label="Слайдер номер 2">2</button>
+          </li>
+          <li class="slider-button" >
+            <button type="button" aria-label="Слайдер номер 3">3</button>
+          </li>
+        </ul>
       </article>
       <section class="main-catalog">
         <h2 class="visually-hidden">Каталог</h2>
-        <ul class="main-catalog">
+        <ul class="catalog">
           <li><a href="#">Виртуальная реальность</a></li>
           <li><a href="#">Моноподы для селфи</a></li>
           <li><a href="#">Экшн-камеры</a></li>
@@ -120,35 +132,32 @@
       <section class="services">
         <h2 class="visually-hidden">Сервис</h2>
         <ul class="service-navigation">
-          <li class="service-navigation-item service-navigation-item-1">
-            <label for="delivery">Доставка</label>
-            <input type="radio" name="service" id="delivery" checked>
+          <li class="service-button">
+            <button class="link" type="button" checked>Доставка</button>
           </li>
-          <li class="service-navigation-item service-navigation-item-2">
-            <label for="warranty">Гарантия</label>
-            <input type="radio" name="service" id="warranty">
+          <li class="service-button">
+            <button class="link" type="button">Гарантия</button>
           </li>
-          <li class="service-navigation-item service-navigation-item-3">
-            <label for="credit">Кредит</label>
-            <input type="radio" name="service" id="credit">
+          <li class="service-button">
+            <button class="link"type="button">Кредит</button>
           </li>
         </ul>
         <ul class="service-description">
           <li class="service-item">
             <h3>Доставка</h3>
-            <p class="service-item-info">
+            <p class="service-info">
               Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
             </p>
           </li>
           <li class="service-item">
             <h3>Гарантия</h3>
-            <p class="service-item-info">
+            <p class="service-info">
               Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.
             </p>
           </li>
           <li class="service-item">
             <h3>Кредит</h3>
-            <p class="service-item-info">
+            <p class="service-info">
               Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.
             </p>
           </li>
@@ -157,31 +166,34 @@
       <section class="brands">
         <h2 class="visually-hidden">Бренды</h2>
         <ul class="brands-list">
-          <li class="brands-list-item">
+          <li class="brandlist-item">
             <a href="#">
               <img src="img/content/logo-1.png" alt="Логотип DJI" width="260" height="100">
             </a>
           </li>
-          <li class="brands-list-item">
+          <li class="brandlist-item">
             <a href="#"><img src="img/content/logo-2.png" alt="Логотип SPgadgets" width="260" height="100">
             </a>
           </li>
-          <li class="brands-list-item">
+          <li class="brandlist-item">
             <a href="#">
               <img src="img/content/logo-3.png" alt="Логотип GoPro" width="260" height="100">
             </a>
           </li>
-          <li class="brands-list-item">
+          <li class="brandlist-item">
             <a href="#">
               <img src="img/content/logo-4.png" alt="Логотип Vive" width="260" height="100">
             </a>
           </li>
         </ul>
       </section>
-      <section class="info">
+      <section class="info half-width">
         <h2>О нас</h2>
         <p>
-          Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:
+          Огромный выбор гаджетов не оставит равнодушным гика,<br>
+          который есть в каждом из нас.<br>
+          Мы можем доставить ваш товар в самые отдаленные точки<br>
+          России! DEVICE работает со многими транспортными компаниями:
         </p>
         <ul class="couriers">
           <li class="couriers-item">
@@ -196,7 +208,7 @@
         </ul>
         <a class="link" href="#">Подробнее о нас</a>
       </section>
-      <section class="contacts">
+      <section class="contacts half-width">
         <h2>Контакты</h2>
         <p>
           Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
@@ -224,7 +236,7 @@
             <a href="#">Корзина</a>
           </li>
         </ul>
-        <p class="footer-address">г. Москва, ул. Строителей, 15</p>
+        <p class="address">г. Москва, ул. Строителей, 15</p>
         <ul class="footer-site-navigation">
           <li>
             <a href="#">Доставка</a>
@@ -240,14 +252,20 @@
           Тел.: +7 (495) 495-95-95
         </p>
         <ul class="footer-social">
-          <li class="footer-social-item" aria-label="Сообщество покупателей и любителей интернет-магазина Девайс в Фейсбуке">
-            <a href="#"><img src="img/icons/fb.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/fb.svg" alt="Сообщество покупателей и любителей интернет-магазина Девайс в Фейсбуке" width="32" height="32">
+            </a>
           </li>
-          <li class="footer-social-item" aria-label="Фан-страница ценителей интернет-магазина Девайс во Вконтакте">
-            <a href="#"><img src="img/icons/instagram.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/instagram.svg" alt="Фан-страница ценителей интернет-магазина Девайс во Вконтакте" width="32" height="32">
+            </a>
           </li>
-          <li class="footer-social-item" aria-label="Публичная страница интернет-магазина Девайс в Твиттере">
-            <a href="#"><img src="img/icons/twitter.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/twitter.svg" alt="Публичная страница интернет-магазина Девайс в Твиттере" width="32" height="32">
+            </a>
           </li>
         </ul>
         <p class="footer-copyright">
@@ -264,18 +282,24 @@
         <img src="img/icons/modal-close.svg" alt="Закрыть" width="55" height="55">
       </button>
        <form class="popup write-us" action="https://echo.htmlacademy.ru" method="post">
-        <label for="name">Ваше имя:</label>
-        <input type="text" name="name-surname" id="name" placeholder="Имя Фамилия" autofocus required>
-        <label for="mail">Ваш e-mail:</label>
-        <input type="email" name="e-mail" id="mail" placeholder="email@example.com" required>
-        <label for="text">Текст письма</label>
-        <textarea id="text" name="letter" minlength="20" required placeholder="В свободной форме"></textarea>
+        <p class="write-item">
+          <label for="name">Ваше имя:</label>
+          <input type="text" name="name-surname" id="name" placeholder="Имя Фамилия" required>
+        </p>
+        <p class="write-item">
+          <label for="mail">Ваш e-mail:</label>
+          <input type="email" name="e-mail" id="mail" placeholder="email@example.com" required>
+        </p>
+        <p class="write-item">
+          <label for="text">Текст письма</label>
+          <textarea id="text" name="letter" minlength="10" placeholder="В свободной форме" required></textarea>
+        </p>
         <button type="submit">Отправить</button>
       </form>
     </section>
     <section class="modal map">
       <h2 class="visually-hidden">Карта</h2>
-      <button class="button close" autofocus>
+      <button class="button close">
         <img src="img/icons/modal-close.svg" alt="Закрыть" width="55" height="55">
       </button>
       <img class="map-full" src="img/content/map-big.jpg" alt="Интернет-магазин Девайс находится по адресу г. Москва, ул. Строителей, 15" width="960" height="560">

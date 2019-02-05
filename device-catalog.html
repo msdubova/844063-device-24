@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <html lang="ru">
     <title>HTML Academy: Девайс</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="catalog-header">
-      <nav class="site-navigation">
-        <a class="catalog-header-logo" href="index.html">
+    <header class="main-header">
+      <nav class="header-navigation">
+        <a class="header-logo" href="index.html">
           <img src="img/icons/logo-device.svg" alt="Логотип интернет-магазина Device" width="163" height="35">
         </a>
           <ul class="header-user-navigation">
@@ -24,8 +25,8 @@
             <li><a href="#">Корзина</a></li>
           </ul>
           <ul class="header-site-navigation">
-            <li><a href="#">Каталог товаров <span>+</span></a>
-            <ul class="header-catalog hidden">
+            <li><a href="device-catalog.html">Каталог товаров <span>+</span></a>
+            <ul class="header-catalog">
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
               <li><a href="#">Экшн-камеры</a></li>
@@ -61,43 +62,65 @@
           </fieldset>
           <fieldset>
             <legend>Цвет</legend>
-            <input type="checkbox" name="black" id="black-field" checked>
-            <label for="black-field">Черный</label>
-            <input type="checkbox" name="white" id="white-field">
-            <label for="white-field">Белый</label>
-            <input type="checkbox" name="blue" id="blue-field" checked>
-            <label for="blue-field">Синий</label>
-            <input type="checkbox" name="red" id="red-field" checked>
-            <label for="red-field">Красный</label>
-            <input type="checkbox" name="pink" id="pink-field">
-            <label for="pink-field">Розовый</label>
+            <p class="filter-item">
+              <input type="checkbox" name="black" id="black-field" checked>
+              <label for="black-field">Черный</label>
+            </p>
+            <p class="filter-item">
+              <input type="checkbox" name="white" id="white-field">
+              <label for="white-field">Белый</label>
+            </p>
+            <p class="filter-item">
+              <input type="checkbox" name="blue" id="blue-field" checked>
+              <label for="blue-field">Синий</label>
+            </p>
+            <p class="filter-item">
+              <input type="checkbox" name="red" id="red-field" checked>
+              <label for="red-field">Красный</label>
+            </p>
+            <p class="filter-item">
+              <input type="checkbox" name="pink" id="pink-field">
+              <label for="pink-field">Розовый</label>
+            </p>
           </fieldset>
           <fieldset>
             <legend>Bluetooth</legend>
-            <input type="radio" name="blue-tooth" id="bluetooth" tabindex="0" aria-label="Поддерживает технологию Блютуз" checked>
-            <label for="bluetooth">Есть</label>
-            <input type="radio" name="blue-tooth" id="no-bluetooth" tabindex="0" aria-label="Не поддерживает технологию Блютуз">
-            <label for="no-bluetooth">Нет</label>
+            <p class="filter-item">
+              <input type="radio" name="blue-tooth" id="bluetooth" aria-label="Поддерживает технологию Блютуз" checked>
+              <label for="bluetooth">Есть</label>
+            </p>
+            <p class="filter-item">
+              <input type="radio" name="blue-tooth" id="no-bluetooth" aria-label="Не поддерживает технологию Блютуз">
+              <label for="no-bluetooth">Нет</label>
+            </p>
           </fieldset>
-          <button class="link" type="button">Показать</button>
+          <button class="link" type="submit">Показать</button>
         </form>
       </section>
       <section class="sortings">
         <h2>Сортировка:</h2>
-        <form action="https://echo.htmlacademy.ru" method="get">
-          <fieldset>
-            <button class="sort-item active" type="button">По цене</button>
-            <button class="sort-item" type="button">По типу</button>
-            <button class="sort-item" type="button">По популярности</button>
-          </fieldset>
-          <fieldset>
-            <button class="sort-button sort-button-up active" type="button">По возрастанию</button>
-            <button class="sort-button sort-button-down" type="button">По убыванию</button>
-          </fieldset>
-        </form>
+        <ul class="sort-type">
+          <li>
+            <a href="#">По цене</a>
+          </li>
+          <li>
+            <a href="#">По типу</a>
+          </li>
+          <li>
+            <a href="#">По популярности</a>
+          </li>
+        </ul>
+        <ul class="sort-order">
+          <li class="sorted">
+            <a href="#">По возрастанию</a>
+          </li>
+          <li>
+            <a href="#">По убыванию</a>
+          </li>
+        </ul>
       </section>
       <section class="catalog">
-        <h2 class="visualy-hidden">Моноподы для селфи</h2>
+        <h2 class="visually-hidden">Моноподы для селфи</h2>
         <ul class="catalog-list">
           <li class="catalog-item">
             <h3>
@@ -172,7 +195,7 @@
       </section>
     </main>
 
-    <footer class="catalog-footer">
+    <footer class="main-footer">
       <nav class="footer-navigation">
         <a class="footer-logo" href="index.html">
           <img src="img/icons/logo-device.svg" alt="Логотип интернет-магазина Device" width="163" height="35">
@@ -191,7 +214,7 @@
             <a href="#">Корзина</a>
           </li>
         </ul>
-        <p class="footer-address">
+        <p class="footer-address" aria-label="Адрес интернет-магазина Девайс">
           г. Москва, ул. Строителей, 15
         </p>
         <ul class="footer-site-navigation">
@@ -205,18 +228,24 @@
             <a href="#">Контакты</a>
           </li>
         </ul>
-        <p class="footer-phone">
+        <p class="footer-phone" aria-label="Телефон интернет-магазина Девайс">
           Тел.: +7 (495) 495-95-95
         </p>
         <ul class="footer-social">
-          <li class="footer-social-item" aria-label="Сообщество покупателей и любителей интернет-магазина Девайс в Фейсбуке">
-            <a href="#"><img src="img/icons/fb.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/fb.svg" alt="Сообщество покупателей и любителей интернет-магазина Девайс в Фейсбуке" width="32" height="32">
+            </a>
           </li>
-          <li class="footer-social-item" aria-label="Фан-страница ценителей интернет-магазина Девайс во Вконтакте">
-            <a href="#"><img src="img/icons/instagram.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/instagram.svg" alt="Фан-страница ценителей интернет-магазина Девайс во Вконтакте" width="32" height="32">
+            </a>
           </li>
-          <li class="footer-social-item" aria-label="Публичная страница интернет-магазина Девайс в Твиттере">
-            <a href="#"><img src="img/icons/twitter.svg" width="32" height="32"></a>
+          <li class="footer-social-item">
+            <a href="#">
+              <img src="img/icons/twitter.svg" alt="Публичная страница интернет-магазина Девайс в Твиттере" width="32" height="32">
+            </a>
           </li>
         </ul>
         <p class="footer-copyright">
