@@ -39,6 +39,7 @@ body {
   line-height: 30px;
   font-weight: 300;
   letter-spacing: 0.01em;
+
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -72,8 +73,59 @@ a {
   }
 
 /* Стили хедера */
+.main-header {
+  width: 1160px;
+  margin: 20px auto 0;
+}
+
+.header-logo {
+margin: 0 0 0 60px;
+}
+
+.header-logo:hover,
+.header-logo:focus {
+  opacity: 0.6;
+}
+
+.header-logo:active {
+  opacity: 0.3;
+}
+
+.header-navigation input[type="search"] {
+  width: 440px;
+  margin-left: 60px;
+  color: rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: none;
+}
+
+.header-navigation input::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/search.svg") no-repeat;
+
+  /* почему не отображается иконка */
+}
+
+.header-navigation input[type="search"]:hover {
+  color: rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+.header-navigation input[type="search"]:focus {
+  color: rgb(0, 0, 0);
+  outline: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
 
 .header-navigation {
+  width: 1160px;
+  height: 300px;
+  box-sizing: border-box;
+
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.01em;
@@ -85,11 +137,23 @@ a {
 .header-user-navigation,
 .header-site-navigation {
   list-style: none;
+  display: flex;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
+.header-user-navigation {
+  width: 500px;
+}
+
+.header-site-navigation {
+
+}
 .header-user-navigation a,
 .header-site-navigation a {
   color: rgb(0, 0, 0);
+  margin-right: 35px;
+
 }
 
 .header-user-navigation a:hover,
@@ -106,21 +170,6 @@ a {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.header-user-navigation input[type="search"] {
-  color: rgba(0, 0, 0, 0.3);
-  background: inherit;
-  border: none;
-}
-
-.header-user-navigation input[type="search"]:hover {
-  color: rgba(0, 0, 0, 0.6);
-  outline: none;
-}
-.header-user-navigation input[type="search"]:focus {
-  color: rgb(0, 0, 0);
-  outline: none;
-  border-bottom: 2px solid rgb(0, 0, 0);
-}
 
 .header-site-navigation a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
@@ -128,6 +177,7 @@ a {
   line-height: 24px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+
 }
 
 .header-site-navigation a:hover,
@@ -141,10 +191,22 @@ a {
 }
 /* вставить иконки  - псевдоклассы */
 .header-catalog {
+  width: 640px;
+  max-height: 130px;
+  padding:0;
+  z-index: 5;
+
   list-style: none;
+
+  background-color: rgb(247, 226, 150);
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
 }
 
-.header-catalog a{
+.header-catalog a {
   font-family: "open_sanslight";
   font-size: 15px;
   line-height: 36px;
@@ -155,17 +217,38 @@ a {
 /* Стили main slider*/
 
 .container {
+  width: 1160px;
+  box-sizing: border-box;
+  margin: -95px auto 0;
+
   color: rgb(70, 70, 70);
 }
 
-.slider-navigation,
-.slider-list{
-  list-style: none;
-
+.product-slider {
+  position: relative;
 }
 
+.slider-navigation,
+.slider-list {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+}
+
+.slider-navigation {
+  position: absolute;
+  right: 0px;
+  top: 300px;
+}
+
+.slider-item:not(:last-child) {
+  padding-left: 90px;
+
+}
 .slider-button button {
     padding: 6px;
+    margin-right: 20px;
 
     font-size: 0px;
     color: red;
@@ -188,10 +271,32 @@ a {
   color: rgb(0, 0, 0);
 }
 
+.product-description {
+  position: relative;
+  width: 500px;
+}
+
+.product-description .link{
+  padding: 10px 100px;
+
+}
+.monopod .product-description {
+  margin-left: 120px;
+}
+
+.tracker .product-description {
+  margin-left: 160px;
+}
+
+.copter .product-description {
+  margin-left: 20px;
+}
 .product-features {
   display: table;
   border: none;
   border-collapse: separate;
+  text-align: left;
+  vertical-align: middle;
 }
 
 .product-features td {
@@ -200,7 +305,8 @@ a {
   font-weight: 300;
   line-height: 20px;
   color: rgb(70, 70, 70);
-  padding: 5px 20px;
+  padding-right: 20px;
+
 }
 .product-features th {
   font-family: "gilroylight", "Arial", sans-serif;
@@ -208,7 +314,7 @@ a {
   font-weight: 300;
   line-height: 48px;
   color: rgb(0, 0, 0);
-  padding: 5px 20px;
+
 }
 
 /* Стили Каталога в main  */
@@ -216,16 +322,22 @@ a {
 .main-catalog .catalog {
   list-style: none;
   display: flex;
+  justify-content: space-between;
+  padding: 0;
 }
 
  .catalog li {
-  margin-right: 40px;
+
 
   width: 160px;
   height: 160px;
 
   background-color: rgb(247, 226, 150);
   background-position: -60% 0;
+}
+
+.catalog li:not(:last-child) {
+  margin-right: 40px;
 }
 
 .catalog a {
@@ -267,6 +379,7 @@ a {
 .brands-list {
   list-style: none;
   display: flex;
+  padding: 0;
 }
 
 .brandlist-item a{
@@ -376,7 +489,10 @@ a {
 }
 
 /* модальные окна */
-
+.modal {
+  width: 960px;
+  box-shadow: 0 8px 20px 0 rgb(181, 181, 181);
+}
 .modal label{
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 18px;
@@ -390,14 +506,12 @@ a {
   background-color: rgb(242, 242, 242);
 }
 .write-us {
-  width: 960px;
   height: 553px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
 }
 
 .map {
-  width: 960px;
   height: 559px;
   box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
   }
