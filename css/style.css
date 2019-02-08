@@ -39,7 +39,6 @@ body {
   line-height: 30px;
   font-weight: 300;
   letter-spacing: 0.01em;
-
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -67,19 +66,21 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  background: rgb(240, 197, 46);
 
-  background-color: rgb(240, 197, 46);
 /* пока не додумалась как сделать эту полосу фоном */
   }
 
 /* Стили хедера */
 .main-header {
-  width: 1160px;
-  margin: 20px auto 0;
+
 }
 
 .header-logo {
-margin: 0 0 0 60px;
+  width: 163px;
+  height: 35px;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .header-logo:hover,
@@ -91,40 +92,12 @@ margin: 0 0 0 60px;
   opacity: 0.3;
 }
 
-.header-navigation input[type="search"] {
-  width: 440px;
-  margin-left: 60px;
-  color: rgba(0, 0, 0, 0.3);
-  background: transparent;
-  border: none;
-}
-
-.header-navigation input::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: url("../img/icons/search.svg") no-repeat;
-
-  /* почему не отображается иконка */
-}
-
-.header-navigation input[type="search"]:hover {
-  color: rgba(0, 0, 0, 0.6);
-  outline: none;
-}
-
-.header-navigation input[type="search"]:focus {
-  color: rgb(0, 0, 0);
-  outline: none;
-  border-bottom: 1px solid rgb(0, 0, 0);
-}
-
 .header-navigation {
   width: 1160px;
-  height: 300px;
+  margin: 40px auto 0;
+  min-height: 300px;
   box-sizing: border-box;
+  padding: 0 60px;
 
   font-size: 15px;
   line-height: 30px;
@@ -134,26 +107,107 @@ margin: 0 0 0 60px;
   background-color: rgb(247, 226, 150);
 }
 
-.header-user-navigation,
-.header-site-navigation {
-  list-style: none;
+.search-navigation {
   display: flex;
-  padding-left: 60px;
-  padding-right: 60px;
+}
+
+.search-navigation input[type="search"] {
+  width: 360px;
+  color: rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: none;
+  text-indent: 40px;
+}
+
+.search-navigation input[type="search"]:hover {
+  color: rgba(0, 0, 0, 0.6);
+  outline: none;
+}
+
+.search-navigation input[type="search"]:focus {
+  color: rgb(0, 0, 0);
+  outline: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.search-navigation input[type="search"]::before {
+  content: " ";
+  display: block;
+
+  width: 16px;
+  height: 16px;
+  background: url("../img/icons/search.svg") no-repeat;
+
+  /* Селектор по инпуту не работает! Я могу иконку вставить на кнопку с большим отсутпом,   но почему-то иконку на инпут не выбирает селектор*/
+}
+
+.search-navigation button {
+  width: 80px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);
+}
+/* кнопке прописать состояния */
+
+.first-line-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-user-navigation {
   width: 500px;
 }
 
+.header-user-navigation,
 .header-site-navigation {
-
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
+
+
+.header-user-navigation li:nth-child(2){
+  margin-left: 140px;
+}
+/* Другого способа как сделать этот отступ я не придумала  */
+
+.login-link::before {
+  content: " ";
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  background: url("../img/icons/user.svg") no-repeat;
+  margin-right: 10px;
+}
+
+.header-user-navigation li:nth-child(2)::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url("../img/icons/compare.svg") no-repeat;
+  margin-right: 10px;
+}
+
+.header-user-navigation li:nth-child(3)::before {
+  content: " ";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url("../img/icons/cart.svg") no-repeat;
+  margin-right: 10px;
+}
+
+.header-user-navigation a:hover .header-user-navigation li::before {
+  opacity: 0.5;
+}
+/* не могу подобрать правильно селектор чтоб работало изменение интерактивных состояний*/
+
 .header-user-navigation a,
 .header-site-navigation a {
   color: rgb(0, 0, 0);
-  margin-right: 35px;
-
 }
 
 .header-user-navigation a:hover,
@@ -166,10 +220,20 @@ margin: 0 0 0 60px;
 .header-user-navigation a:active,
 .header-user-navigation a:visited,
 .header-site-navigation a:active,
-.header-site-navigation a:visited {
+.header-site-navigation a:visited,{
   color: rgba(0, 0, 0, 0.3);
 }
 
+.header-site-navigation {
+  margin-top: 50px;
+  align-items: baseline;
+}
+
+.header-site-navigation li:first-child {
+  margin-right: 140px;
+}
+/*наверняка выравниванеи всех элементов по центральной оси должно быть не как у меня отступами элементов,
+ но как это автоматизировать? разбить хедер на колонки вместо деления по горизонтали на блоки? */
 
 .header-site-navigation a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
@@ -177,7 +241,6 @@ margin: 0 0 0 60px;
   line-height: 24px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-
 }
 
 .header-site-navigation a:hover,
@@ -189,22 +252,21 @@ margin: 0 0 0 60px;
 .header-site-navigation a:visited {
   color: rgba(0, 0, 0, 0.3);
 }
-/* вставить иконки  - псевдоклассы */
+
 .header-catalog {
-  width: 640px;
   max-height: 130px;
-  padding:0;
+  padding: 0;
   z-index: 5;
-
-  list-style: none;
-
-  background-color: rgb(247, 226, 150);
-
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  list-style: none;
 
+  background-color: rgb(247, 226, 150);
 }
+/* как разделить выпадающее меню на 3 столбца? */
 
 .header-catalog a {
   font-family: "open_sanslight";
@@ -214,38 +276,37 @@ margin: 0 0 0 60px;
   text-transform: none;
 }
 
-/* Стили main slider*/
 
+/* основная часть main*/
 .container {
   width: 1160px;
   box-sizing: border-box;
-  margin: -95px auto 0;
+  margin: 0 auto;
 
   color: rgb(70, 70, 70);
 }
 
+/* Стили main slider*/
+
 .product-slider {
-  position: relative;
+  overflow: hidden;
+  margin-bottom: 105px;
 }
 
 .slider-navigation,
 .slider-list {
-  list-style: none;
-  overflow: hidden;
+  margin: 0;
   padding: 0;
   display: flex;
+  list-style: none;
 }
 
 .slider-navigation {
   position: absolute;
-  right: 0px;
-  top: 300px;
+  right: 350px;
+  top: 620px;
 }
 
-.slider-item:not(:last-child) {
-  padding-left: 90px;
-
-}
 .slider-button button {
     padding: 6px;
     margin-right: 20px;
@@ -260,8 +321,14 @@ margin: 0 0 0 60px;
     outline: none;
   }
 
+  .slider-list {
+    width: 300%;
+  }
+
 .slider-item {
   display: flex;
+  width: 33,3333%;
+  padding-left: 90px;
 }
 
 .slider-item h3 {
@@ -269,17 +336,20 @@ margin: 0 0 0 60px;
   font-size: 47px;
   line-height: 56px;
   color: rgb(0, 0, 0);
+  margin-bottom: 0;
 }
 
+.slider-item p {
+  margin: 0;
+}
 .product-description {
-  position: relative;
   width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.product-description .link{
-  padding: 10px 100px;
-
-}
 .monopod .product-description {
   margin-left: 120px;
 }
@@ -291,6 +361,9 @@ margin: 0 0 0 60px;
 .copter .product-description {
   margin-left: 20px;
 }
+
+/* как сделать выравнивание по середине поля без присваивания оступа каждому отедльному элементу?
+вопрос актуален и для хедера - не могу понять как сделть ровнение посередине  */
 .product-features {
   display: table;
   border: none;
@@ -305,7 +378,7 @@ margin: 0 0 0 60px;
   font-weight: 300;
   line-height: 20px;
   color: rgb(70, 70, 70);
-  padding-right: 20px;
+  padding-right: 75px;
 
 }
 .product-features th {
@@ -319,21 +392,11 @@ margin: 0 0 0 60px;
 
 /* Стили Каталога в main  */
 
-.main-catalog .catalog {
+.catalog {
   list-style: none;
   display: flex;
-  justify-content: space-between;
   padding: 0;
-}
-
- .catalog li {
-
-
-  width: 160px;
-  height: 160px;
-
-  background-color: rgb(247, 226, 150);
-  background-position: -60% 0;
+  margin-bottom: 80px;
 }
 
 .catalog li:not(:last-child) {
@@ -346,12 +409,87 @@ margin: 0 0 0 60px;
   line-height: 24px;
   color: rgb(0, 0, 0);
 }
-/* нужно вставить всевдоэлементы - картинки и опустить текст подписей */
+
+.catalog li::before {
+  content:" ";
+  display: table;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 30px;
+
+  background-color: rgb(247, 226, 150);
+}
+
+.catalog li:nth-child(1)::before {
+  background-image: url("../img/icons/popular-1.svg") no-repeat;
+  /* почему не вставляет картинку фоном, если селектор работает */
+  background-color: blue;
+}
+
+.catalog li:nth-child(2)::before {
+  background-image: url("../img/icons/popular-2.svg") no-repeat;
+}
+
+.catalog li:nth-child(3)::before {
+  background-image: url("../img/icons/popular-3.svg") no-repeat;
+}
+
+
+.catalog li:nth-child(4)::before {
+  background-image: url("../img/icons/popular-4.svg") no-repeat;
+}
+
+
+.catalog li:nth-child(5)::before {
+  background-image: url("../img/icons/popular-5.svg") no-repeat;
+}
+
+.catalog li:nth-child(6)::before {
+  background-image: url("../img/icons/popular-6.svg") no-repeat;
+}
+
+.catalog a:hover .catalog li::before {
+  background-color: rgb(240, 197, 46);
+}
+/* как сделать интерактивность , не выходит подобрать селектор */
 
 /* Стилизация второго слайдера - сервисов */
-
 .services {
   background-color: rgb(229, 229, 229);
+  margin-bottom: 100px;
+}
+
+.services .container {
+  display: flex;
+}
+/* как сделать чтоб сьехал фон(по аналогии с логотипом в хедере и с элементами артикла (слайдер) */
+.service-navigation,
+.service-description {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-navigation {
+  min-width: 280px;
+  height: 320px;
+  border-right: 7px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-navigation li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.service-button  button{
+  text-align: center;
+  width: 278px;
+  height: 40px;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .service-description {
@@ -365,25 +503,27 @@ margin: 0 0 0 60px;
   color: rgb(0, 0, 0);
   }
 
-.service-navigation,
-.service-description {
-  list-style: none;
+.service-item {
+  margin-left: 115px;
 }
-.service-button  button{
-  box-shadow: none;
-/* как сбросить стандартную кнопку? */
-}
+
+/* понять эту микросетку и не забыть про псевдоэлементы и активные состояния */
+
 
 /* стилизация партнеров */
-
+.brands {
+  margin-bottom: 100px;
+}
 .brands-list {
   list-style: none;
   display: flex;
-  padding: 0 60px;
-  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
 }
+/* не подходит выравнивание - попробуй перенести центровщик, потому что все виды justify я испробовала */
 
-.brandlist-item a{
+.brandlist-item a {
   filter: grayscale(100%) opacity(0.2);
 }
 
@@ -394,11 +534,18 @@ margin: 0 0 0 60px;
 
 .info-contacts {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 90px;
 }
 
 .info,
 .contacts {
-flex-basis: 50%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
 }
 
 .info h2,
@@ -429,22 +576,28 @@ flex-basis: 50%;
 .footer-logo img {
   fill: rgb(240, 197, 46);
 }
-/* как перезалить цвет у svg через сss */
+/* как перезалить цвет у svg через сss???? */
 
 .footer-navigation {
   color: rgb(255, 255, 255);
   width: 1160px;
-  /* height: 300px; */
+  min-height: 323px;
+
   box-sizing: border-box;
   margin: 0 auto;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.01em;
 }
-
+.footer-navigation > * {
+  border: red solid 1px;
+}
+/* не могу понять почему нижняя строка с соцсетями на 150 пикселей высотой!!!!они же не прописаны  */
 .footer-navigation a {
   color: rgb(255, 255, 255);
 }
@@ -452,13 +605,15 @@ flex-basis: 50%;
 .footer-navigation ul {
   list-style: none;
   display: flex;
+  padding: 0;
+  margin:0;
 }
 .footer-user-navigation {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.footer-user-navigation li{
-  margin-left: 40px;
+.footer-user-navigation li:not(:first-child){
+  margin-left: 65px;
 }
 
 .footer-user-navigation a{
@@ -485,8 +640,8 @@ flex-basis: 50%;
   margin: 0;
 }
 
-.footer-site-navigation li{ margin-right: 40px;
-
+.footer-site-navigation li{
+  margin-right: 40px;
 }
 
 .footer-site-navigation a {
@@ -507,7 +662,9 @@ flex-basis: 50%;
   color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-social li{margin-right: 20px;}
+.footer-social li {
+  margin-right: 20px;}
+
 .footer-social-item a {
   opacity: 0.3;
 }
