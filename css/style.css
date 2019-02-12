@@ -3,7 +3,7 @@
   src: local("gilroylight"),
        url("../fonts/gilroylight.woff2") format('woff2'),
        url("../fonts/gilroylight.woff") format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -12,7 +12,7 @@
   src: local("gilroyextrabold"),
        url("../fonts/gilroyextrabold.woff2") format('woff2'),
        url("../fonts/gilroyextrabold.woff") format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -21,7 +21,7 @@
   src: local("open_sanslight"),
        url("../fonts/opensanslight.woff2") format('woff2'),
        url("../fonts/opensanslight.woff2") format('woff');
-  font-weight: lighter;
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -30,7 +30,7 @@
   src: local("open_sans"),
        url("../fonts/opensans.woff2") format('woff2'),
        url("../fonts/opensans.woff") format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -40,6 +40,7 @@ body {
 
   font-family: "open_sanslight", "Arial", sans-serif;
   font-size: 15px;
+  letter-spacing: 0.014em;
   line-height: 30px;
   font-weight: 300;
   letter-spacing: 0.01em;
@@ -62,16 +63,17 @@ a {
 }
 
 .link {
+  display: inline-block;
   position: relative;
   z-index: 0;
+  width: 44%;
 
-  display: inline-block;
   padding: 10px 0;
 
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   color: rgb(0, 0, 0);
   font-weight: bold;
   text-transform: uppercase;
@@ -80,17 +82,15 @@ a {
 
 .link::before {
   content: " ";
-
   position: absolute;
   z-index: -1;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
   width: 100%;
-  height: 8px;
-    /* процент нужно считать от высоты строки? то есть по макету высоты этого элемента - 8 пикселей,
-    а line-height строки - 24 пикселя. Значит высота элемента - это треть - 33.3333% не сработало=)*/
+  height: 18.286%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   vertical-align: middle;
+
   background-color: rgb(240, 197, 46);
 
   transition: height 0.3s;
@@ -99,16 +99,20 @@ a {
 .link:hover::before {
   height: 100%;
 }
+
+
+
+
     /* Стили хедера */
 .main-header {
 
 }
 
 .header-logo {
+  display: block;
   width: 163px;
   height: 35px;
-  display: block;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
   margin-top: -20px;
 }
 
@@ -125,7 +129,6 @@ a {
   width: 1160px;
   height: 300px;
   margin: 40px auto 0;
-
   box-sizing: border-box;
   padding: 0 60px;
   padding-top: 1px;
@@ -140,21 +143,22 @@ a {
 
 .search-navigation {
   display: flex;
+  position: relative;
 }
 
 .search-navigation input[type="search"] {
-
   width: 360px;
+  padding-left: 40px;
   color: rgba(0, 0, 0, 0.3);
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  padding-left: 40px;
 }
 
 .search-navigation input[type="search"]:hover {
   color: rgba(0, 0, 0, 0.6);
   outline: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .search-navigation input[type="search"]:focus {
@@ -165,10 +169,12 @@ a {
 
 .search-navigation::before {
   content: " ";
-  position: absolute;
-
   width: 16px;
   height: 16px;
+  position: absolute;
+  top: 8px;
+  left: 2px;
+
   background-image: url("../img/icons/search.svg");
   background-repeat: no-repeat;
 }
@@ -184,6 +190,7 @@ a {
 .first-line-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 }
 
 .header-user-navigation {
@@ -193,17 +200,15 @@ a {
 .header-user-navigation,
 .header-site-navigation {
   list-style: none;
+  display: flex;
   padding: 0;
   margin: 0;
-  display: flex;
-
 }
+
 .header-user-navigation li:nth-child(2) {
   margin-left: auto;
 }
-.header-user-navigation li:last-child{
-  margin-left: Npx;
-}
+
 .header-user-navigation li:last-child {
   margin-left: 40px;
 }
@@ -213,8 +218,9 @@ a {
   display: inline-block;
   width: 13px;
   height: 12px;
+  margin-right: 14px;
+
   background: url("../img/icons/user.svg") no-repeat;
-  margin-right: 10px;
 }
 
 .header-user-navigation li:nth-child(2)::before {
@@ -222,8 +228,9 @@ a {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: url("../img/icons/compare.svg") no-repeat;
   margin-right: 10px;
+  background: url("../img/icons/compare.svg") no-repeat;
+
 }
 
 .header-user-navigation li:nth-child(3)::before {
@@ -231,14 +238,13 @@ a {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: url("../img/icons/cart.svg") no-repeat;
   margin-right: 10px;
+  background: url("../img/icons/cart.svg") no-repeat;
 }
 
-.header-user-navigation a:hover .header-user-navigation li::before {
+.header-user-navigation li:hover::before {
   opacity: 0.5;
 }
-  /* не могу подобрать правильно селектор чтоб работало изменение интерактивных состояний*/
 
 .header-user-navigation a,
 .header-site-navigation a {
@@ -262,10 +268,8 @@ a {
 .header-site-navigation {
   margin: 0;
   padding: 0;
-  margin-top: 30px;
   align-items: baseline;
   justify-content: space-between;
-
 }
 
 .header-site-navigation > li:first-child {
@@ -277,11 +281,9 @@ a {
 }
 
 .header-site-navigation > li:nth-child(2) {
-  margin-left: 225px;
-  margin-right: 30px;
+  margin-left: 215px;
+  margin-right: 35px;
 }
-  /*наверняка выравниванеи всех элементов по центральной оси должно быть не как у меня отступами элементов,
-  но как это автоматизировать? разбить хедер на колонки вместо деления по горизонтали на блоки? */
 
 .header-site-navigation a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
@@ -312,22 +314,20 @@ a {
 .header-site-navigation li:first-child:hover .hidden {
  visibility: visible;
 }
-/* как сделать чтоб меню не скрывалось после того как я убираю курсор с ссылки ховер на пункты
-этого меню */
 
 .header-catalog {
+  display: flex;
   position: absolute;
+  z-index: 5;
+  width: 1160px;
+  max-height: 140px;
   left: -60px;
   bottom: -160px;
-  height: 140px;
-  width: 1160px;
-  /* нормально, что я тут использую max-height? может , не стоит ограничивать высоту выпадающего меню? */
   box-sizing: border-box;
   padding: 0;
   padding-left: 60px;
   margin: 0;
-  z-index: 5;
-  display: flex;
+
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -338,16 +338,17 @@ a {
 }
 
 .header-catalog li {
-  margin: 0;
   padding: 0;
+  margin: 0;
   margin-bottom: 10px;
   margin-right: 57px;
 }
+
 .header-catalog a {
   display: block;
-
   padding: 0;
   margin: 0;
+
   font-family: "open_sanslight";
   font-size: 15px;
   line-height: 36px;
@@ -357,6 +358,11 @@ a {
 
 
 /* основная часть main*/
+
+main {
+  margin-top: -112px;
+}
+
 .container {
   width: 1160px;
   box-sizing: border-box;
@@ -368,38 +374,46 @@ a {
 /* Стили main slider*/
 
 .product-slider {
+  position: relative;
+  margin-bottom: 60px;
   overflow: hidden;
-  margin-bottom: 105px;
 }
 
 .slider-navigation,
 .slider-list {
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
+
   list-style: none;
 }
 
 .slider-navigation {
   position: absolute;
-  right: 350px;
-  top: 620px;
+  width: 80px;
+  right: 80px;
+  bottom: 194px;
+  justify-content: space-between;
 }
 
 .slider-button button {
-    padding: 6px;
-    margin-right: 20px;
+  width: 13px;
+  height: 13px;
 
-    font-size: 0px;
-    color: red;
+  font-size: 0px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
 
-    background: none;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius:50%;
-    box-shadow: none;
-    outline: none;
+  background-color: transparent;
+}
+  /* почему не удается сделать кнопки круглыми?*/
+
+.pushed {
   }
-  /* при увеличении уменьшении масшатаба страницы эти кнопки улетают - надо закрепить */
+/* мне непонятно, нужно ли присваивать класс выбранному слайду,
+чтоб кнопка менялась, если я не смогу сделать слайдер, то есть
+ фактически останется статичный стиль кнопки, что можно заменить
+ картинкой */
 
 .slider-list {
     width: 300%;
@@ -412,26 +426,30 @@ a {
 }
 
 .slider-item h3 {
+  margin-top: 78px;
+  margin-bottom: 20px;
+
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 56px;
+  letter-spacing: 0.014em;
   color: rgb(0, 0, 0);
-  margin-bottom: 0;
 }
 
 .slider-item p {
   margin: 0;
+  margin-bottom: 42px;
 }
+
 .product-description {
-  width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
+  width: 500px;
 }
 
 .monopod .product-description {
-  margin-left: 120px;
+  margin-left: 125px;
 }
 
 .tracker .product-description {
@@ -442,41 +460,37 @@ a {
   margin-left: 20px;
 }
 
-/* как сделать выравнивание по середине поля без присваивания оступа каждому отедльному элементу?
-вопрос актуален и для хедера - не могу понять как сделть ровнение посередине  */
 .product-features {
   display: table;
-  border: none;
-  border-collapse: separate;
+  margin-top: 45px;
   text-align: left;
   vertical-align: middle;
+  border: none;
+  border-collapse: separate;
 }
 
 .product-features td {
+  padding-right: 75px;
   font-family: "open_sanslight", "Arial", sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 20px;
   color: rgb(70, 70, 70);
-  padding-right: 75px;
-
 }
+
 .product-features th {
   font-family: "gilroylight", "Arial", sans-serif;
   font-size:  36px;
   font-weight: 300;
   line-height: 48px;
   color: rgb(0, 0, 0);
-
 }
 
-/* Стили Каталога в main  */
-
 .catalog {
-  list-style: none;
   display: flex;
   padding: 0;
-  margin-bottom: 80px;
+  margin-bottom: 175px;
+  list-style: none;
 }
 
 .catalog li:not(:last-child) {
@@ -509,7 +523,7 @@ a {
 .catalog li:nth-child(2)::before {
   background-image: url("../img/icons/popular-2.svg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 100%;
 }
 
 .catalog li:nth-child(3)::before {
@@ -548,76 +562,107 @@ a {
 
 /* как оставить при нажатии отсутсвтие прозрачности у фона псевдожлемента?? */
 
-
-/* Стилизация второго слайдера - сервисов */
 .services {
-  background-color: rgb(229, 229, 229);
+  height: 288px;
+  padding-top: 1px;
   margin-bottom: 100px;
+
+  background-color: rgb(229, 229, 229);
 }
 
 .services .container {
   display: flex;
-}
-/* как сделать чтоб сьехал фон(по аналогии с логотипом в хедере и с элементами артикла (слайдер) */
-.service-navigation,
-.service-description {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  margin-top: -105px;
+  overflow: hidden;
 }
 
 .service-navigation {
-  min-width: 280px;
-  height: 320px;
+  min-width: 284px;
+  height: 319px;
+  box-sizing: border-box;
   border-right: 7px solid rgb(0, 0, 0);
+}
+
+.service-navigation ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.service-navigation li:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-.service-button  button{
-  text-align: center;
-  width: 278px;
-  height: 40px;
-  border: none;
   margin: 0;
   padding: 0;
+  margin-top: 80px;
+  list-style: none;
 }
 
-.service-description {
+.service-navigation li {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.service-navigation li:hover,
+.service-navigation li:focus {
+  z-index: 6;
+
+  color: rgb(240, 197, 46);
+  background-color: black;
+}
+
+.service-button button {
+  width: 100%;
+  padding-left: 25px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+}
+
+.service-description ul {
   display: flex;
+  width: 300%;
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  list-style: none;
+}
+
+.service-description li {
+  width: 33.3333%;
 }
 
 .service-description h3 {
+  position: relative;
+  margin-bottom: 25px;
+
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 48px;
   color: rgb(0, 0, 0);
+}
+
+.service-description h3::after {
+  content: " ";
+  position: absolute;
+  z-index: 100;
+  display: table;
+  width: 136px;
+  height: 164px;
+  right: 130px;
+  bottom: -130px;
+
+  background-image: url(../img/icons/delivery.svg);
   }
 
 .service-item {
   margin-left: 115px;
 }
 
-/* понять эту микросетку и не забыть про псевдоэлементы и активные состояния */
-
-
-/* стилизация партнеров */
 .brands {
   margin-bottom: 100px;
 }
 .brands-list {
-  list-style: none;
   display: flex;
+  justify-content: space-around;
   padding: 0;
   margin: 0;
-  justify-content: space-around;
+  list-style: none;
 }
-/* не подходит выравнивание - попробуй перенести центровщик, потому что все виды justify я испробовала */
 
 .brandlist-item a {
   filter: grayscale(100%) opacity(0.2);
@@ -636,12 +681,11 @@ a {
 
 .info,
 .contacts {
-  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-
+  height: 550px;
 }
 
 .info h2,
@@ -650,20 +694,18 @@ a {
   font-size: 47px;
   line-height: 48px;
   color: rgb(0, 0, 0);
-  }
+}
 
 .couriers a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 16px;
   line-height: 40px;
   color: rgb(0, 0, 0);
- }
+}
 
 .half-width {
   width: 50%;
 }
-
-/* стилизация футера */
 
 .main-footer {
   background-color: rgb(70, 70, 70);
@@ -674,20 +716,20 @@ a {
 }
 
 .footer-navigation {
-  color: rgb(255, 255, 255);
-  width: 1160px;
-  min-height: 323px;
-
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 1160px;
+  min-height: 323px;
+  margin: 0 auto;
+  padding-top: 50px;
+  box-sizing: border-box;
 
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.01em;
+
+  color: rgb(255, 255, 255);
 }
 
 .footer-navigation a {
@@ -695,10 +737,10 @@ a {
 }
 
 .footer-navigation ul {
-  list-style: none;
   display: flex;
   padding: 0;
   margin:0;
+  list-style: none;
 }
 
 .footer-user-navigation {
