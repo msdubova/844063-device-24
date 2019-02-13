@@ -25,8 +25,8 @@
           </ul>
         </div>
 
-        <ul class="header-site-navigation">
-          <li><a href="device-catalog.html">Каталог товаров</a>
+        <div class="header-site-navigation">
+          <div><a href="device-catalog.html">Каталог товаров</a>
             <!-- Убрала спан с плюсом - добавлю его как псевдоэлемент -->
             <ul class="header-catalog hidden">
               <li><a href="#">Виртуальная реальность</a></li>
@@ -37,11 +37,15 @@
               <li></li>
               <li><a href="#">Квадрокоптеры</a></li>
             </ul>
-          </li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
+          </div>
+          <div>
+            <ul class="header-services">
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -111,17 +115,15 @@
               </div>
             </li>
           </ul>
-          <ul class="slider-navigation">
-            <li class="slider-button" >
-              <button type="button pushed" aria-label="Слайдер номер 1">1</button>
-            </li>
-            <li class="slider-button" >
-              <button type="button" aria-label="Слайдер номер 2">2</button>
-            </li>
-            <li class="slider-button" >
-              <button type="button" aria-label="Слайдер номер 3">3</button>
-            </li>
-          </ul>
+          <div class="slider-navigation">
+            <input class="visually-hidden" type="radio" id="slide1" name="slider" checked>
+            <label class="radio-control" for="slide1"></label>
+            <input class="visually-hidden" type="radio" id="slide2" name="slider">
+            <label class="radio-control" for="slide2"></label>
+            <input class="visually-hidden" type="radio" id="slide3" name="slider">
+            <label class="radio-control" for="slide3"></label>
+          </div>
+
         </article>
         <section class="main-catalog">
           <h2 class="visually-hidden">Каталог</h2>

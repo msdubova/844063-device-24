@@ -3,7 +3,7 @@
   src: local("gilroylight"),
        url("../fonts/gilroylight.woff2") format('woff2'),
        url("../fonts/gilroylight.woff") format('woff');
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -12,7 +12,7 @@
   src: local("gilroyextrabold"),
        url("../fonts/gilroyextrabold.woff2") format('woff2'),
        url("../fonts/gilroyextrabold.woff") format('woff');
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -30,7 +30,7 @@
   src: local("open_sans"),
        url("../fonts/opensans.woff2") format('woff2'),
        url("../fonts/opensans.woff") format('woff');
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -160,7 +160,7 @@ a {
 .search-navigation input[type="search"]:hover {
   color: rgba(0, 0, 0, 0.6);
   outline: none;
-  border-bottom: 2px solid rgb(0, 0, 0);
+
 }
 
 .search-navigation input[type="search"]:focus {
@@ -187,8 +187,27 @@ a {
   box-sizing: border-box;
   background-color: transparent;
   border: 2px solid rgb(0, 0, 0);
+  visibility: hidden;
 }
-  /* кнопке прописать состояния */
+
+.search-navigation input:focus + button {
+  visibility: visible;
+}
+
+.search-navigation input:focus + button:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.search-navigation input:focus + button:active,
+.search-navigation input:focus + button:visited {
+  background-color: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* не могу понять работает ли активное состояние,
+при нажатии все исчезает - почему так */
+
 
 .first-line-wrapper {
   display: flex;
@@ -272,23 +291,29 @@ a {
 .header-site-navigation {
   margin: 0;
   padding: 0;
-  align-items: baseline;
+  display: flex;
   justify-content: space-between;
 }
 
-.header-site-navigation > li:first-child {
-  margin-right: auto;
+.header-site-navigation > div{
+ width: 50%;
 }
 
-.header-site-navigation > li:last-child {
-  margin-left: auto;
+.header-site-navigation div:first-child {
+  margin-right: 40px;
 }
 
-.header-site-navigation > li:nth-child(2) {
-  margin-left: 215px;
-  margin-right: 35px;
-}
+.header-services {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 
+}
+.header-services li:nth-child(2) {
+  margin-right: 72px;
+}
 .header-site-navigation a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 18px;
@@ -307,7 +332,7 @@ a {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.header-site-navigation li:first-child {
+.header-site-navigation div:first-child {
   position: relative;
 }
 
@@ -315,14 +340,14 @@ a {
  visibility: hidden;
 }
 
-.header-site-navigation li:first-child:hover .hidden {
+.header-site-navigation div:first-child:hover .hidden {
  visibility: visible;
 }
 
 .header-catalog {
   display: flex;
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   width: 1160px;
   max-height: 140px;
   left: -60px;
@@ -360,9 +385,6 @@ a {
   text-transform: none;
 }
 
-
-/* основная часть main*/
-
 main {
   margin-top: -112px;
 }
@@ -375,52 +397,65 @@ main {
   color: rgb(70, 70, 70);
 }
 
-/* Стили main slider*/
-
 .product-slider {
   position: relative;
   margin-bottom: 60px;
   overflow: hidden;
 }
 
-.slider-navigation,
-.slider-list {
-  display: flex;
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
+.product-slider::before {
+  content: " ";
+  position: absolute;
+  z-index: 1;
+  left: 600px;
+  top: 40px;
+  width: 100px;
+  height: 7px;
+  background-image: url("../img/icons/rect1.svg");
+  background-color: rgb(255, 255, 255);
 }
 
 .slider-navigation {
   position: absolute;
-  width: 80px;
-  right: 80px;
-  bottom: 194px;
-  justify-content: space-between;
+  right: 68px;
+  bottom: 185px;
+  justify-content: space-around;
 }
 
-.slider-button button {
-  width: 13px;
-  height: 13px;
-
-  font-size: 0px;
-  border: 1px solid rgb(0, 0, 0);
+.slider-navigation .radio-control {
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  margin-right: 16px;
   border-radius: 50%;
 
+  border: 1px solid rgb(0, 0, 0);
   background-color: transparent;
 }
-  /* почему не удается сделать кнопки круглыми?*/
 
-.pushed {
-  }
-/* мне непонятно, нужно ли присваивать класс выбранному слайду,
-чтоб кнопка менялась, если я не смогу сделать слайдер, то есть
- фактически останется статичный стиль кнопки, что можно заменить
- картинкой */
+.slider-navigation input:checked + .radio-control::before{
+  content: "";
+  position: relative;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  width: 2px;
+  height: 2px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
 
-.slider-list {
-    width: 300%;
+.slider-navigation input:nth-child(2):checked .slider-list{
+  transform: translateX(33.3333%);
+}
+.slider-navigation input:last-child:checked .slider-list {
+  transform: translateX(66.6666%);
+}
+ .slider-list {
+  width: 300%;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .slider-item {
@@ -450,6 +485,43 @@ main {
   flex-direction: column;
   align-items: flex-start;
   width: 500px;
+  position: relative;
+}
+
+.monopod .product-description::after {
+  content:" ";
+  width: 210px;
+  height: 200px;
+  background-image: url("../img/icons/01.svg");
+  position: absolute;
+  background-repeat: no-repeat;
+  right: -45px;
+  top: 10px;
+  z-index: 1;
+}
+
+.tracker .product-description::after {
+  content:" ";
+  width: 210px;
+  height: 200px;
+  background-image: url("../img/icons/02.svg");
+  position: absolute;
+  background-repeat: no-repeat;
+  right: -45px;
+  top: 10px;
+  z-index: 1;
+}
+
+.copter .product-description::after {
+  content:" ";
+  width: 210px;
+  height: 200px;
+  background-image: url("../img/icons/03.svg");
+  position: absolute;
+  background-repeat: no-repeat;
+  right: -45px;
+  top: 10px;
+  z-index: 1;
 }
 
 .monopod .product-description {
@@ -564,7 +636,10 @@ main {
   opacity: 0.3;
 }
 
-/* как оставить при нажатии отсутсвтие прозрачности у фона псевдожлемента?? */
+/* при наведении на элементы каталога включается опасити,
+которая нужна только для иконки всефдожлемента. но не затрагивает
+его фон. наверно енадо сделать два псевдоэлемента? один для фона
+один для фоновой картинки */
 
 .services {
   height: 288px;
@@ -603,8 +678,6 @@ main {
 
 .service-navigation li:hover,
 .service-navigation li:focus {
-  z-index: 6;
-
   color: rgb(240, 197, 46);
   background-color: black;
 }
@@ -643,7 +716,7 @@ main {
 .service-description h3::after {
   content: " ";
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   display: table;
   width: 136px;
   height: 164px;
