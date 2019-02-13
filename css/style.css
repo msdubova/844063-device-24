@@ -112,7 +112,7 @@ a {
   display: block;
   width: 163px;
   height: 35px;
-  margin-bottom: 27px;
+  margin-bottom: 20px;
   margin-top: -20px;
 }
 
@@ -144,6 +144,8 @@ a {
 .search-navigation {
   display: flex;
   position: relative;
+  width: 50%;
+  margin-right: 40px;
 }
 
 .search-navigation input[type="search"] {
@@ -172,7 +174,7 @@ a {
   width: 16px;
   height: 16px;
   position: absolute;
-  top: 8px;
+  top: 15px;
   left: 2px;
 
   background-image: url("../img/icons/search.svg");
@@ -181,7 +183,8 @@ a {
 
 .search-navigation button {
   width: 80px;
-  height: 35px;
+  height: 49px;
+  box-sizing: border-box;
   background-color: transparent;
   border: 2px solid rgb(0, 0, 0);
 }
@@ -190,11 +193,12 @@ a {
 .first-line-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 25px;
+  align-items: center;
 }
 
 .header-user-navigation {
-  width: 500px;
+  width: 50%;
 }
 
 .header-user-navigation,
