@@ -351,7 +351,7 @@ a {
   width: 1160px;
   max-height: 140px;
   left: -60px;
-  bottom: -160px;
+  bottom: -161px;
   box-sizing: border-box;
   padding: 0;
   padding-left: 60px;
@@ -445,12 +445,17 @@ main {
   border-radius: 50%;
 }
 
-.slider-navigation input:nth-child(2):checked .slider-list{
-  transform: translateX(33.3333%);
+.slider-navigation input:nth-child(2):checked ~ .slider-list{
+  transform: translateX(-33.3333%);
 }
-.slider-navigation input:last-child:checked .slider-list {
-  transform: translateX(66.6666%);
+.slider-navigation input:last-child:checked ~ .slider-list {
+  transform: translateX(-66.6666%);
 }
+/* Кирилл, дело в том, что если я меня порядок флексов в article  class="productslider"
+то перестает работать радио, и я не могу найти почему! на работу этой формы не влияют дргуие селекторы
+но почему то не работает. ФАктически если поменять местами в разметке слайдер лист и слайдер навигейшн, то радио
+не реагирует. почему я хо чу поменять, потому что насколько я поняла чтоб застаивть слайдер лист реагировать
+на включение кнопок радио , нужно чтоб этот слайдер лист стоял ниже в коде и далее с помощью "~". Что я тут делаю не так, ведь моя логика проста*/
  .slider-list {
   width: 300%;
   display: flex;
@@ -908,6 +913,7 @@ main {
 .modal {
   width: 960px;
   box-shadow: 0 8px 20px 0 rgb(181, 181, 181);
+  display: none;
 }
 
 .modal label{
