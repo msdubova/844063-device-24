@@ -96,14 +96,17 @@ a {
   transition: height 0.3s;
 }
 
-.link:hover::before {
+.link:hover::before,
+.link:focus::before {
   height: 100%;
 }
 
+.link:active::before {
+  color: rgba(0, 0, 0, 0.3);
+}
 
+/* Почему тут не меняется активное состояние кнопок??? */
 
-
-    /* Стили хедера */
 .main-header {
 
 }
@@ -112,7 +115,7 @@ a {
   display: block;
   width: 163px;
   height: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   margin-top: -20px;
 }
 
@@ -174,7 +177,7 @@ a {
   width: 16px;
   height: 16px;
   position: absolute;
-  top: 15px;
+  top: 16px;
   left: 2px;
 
   background-image: url("../img/icons/search.svg");
@@ -205,14 +208,14 @@ a {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* не могу понять работает ли активное состояние,
-при нажатии все исчезает - почему так */
+/* не могу понять работает ли активное состояние у кнопки?,
+при нажатии на кнопку весь инпут поиск - почему так */
 
 
 .first-line-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   align-items: center;
 }
 
@@ -236,7 +239,7 @@ a {
   margin-left: 40px;
 }
 
-.login-link::before {
+.header-user-navigation .login-link::before {
   content: " ";
   display: inline-block;
   width: 13px;
@@ -246,7 +249,7 @@ a {
   background: url("../img/icons/user.svg") no-repeat;
 }
 
-.header-user-navigation li:nth-child(2)::before {
+.header-user-navigation .compare::before{
   content: " ";
   display: inline-block;
   width: 10px;
@@ -256,7 +259,7 @@ a {
 
 }
 
-.header-user-navigation li:nth-child(3)::before {
+.header-user-navigation .cart::before {
   content: " ";
   display: inline-block;
   width: 12px;
@@ -301,6 +304,23 @@ a {
 
 .header-site-navigation div:first-child {
   margin-right: 40px;
+}
+
+.header-site-navigation div:first-child > a{
+  position: relative;
+}
+
+.header-site-navigation div:first-child > a::after{
+  content: "";
+  display: table;
+  background-image: url("../img/icons/plus.svg");
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 3px;
+  right: -28px;
+  opacity: 0.3;
 }
 
 .header-services {
@@ -349,12 +369,12 @@ a {
   position: absolute;
   z-index: 2;
   width: 1160px;
-  max-height: 140px;
+  height: 160px;
   left: -60px;
   bottom: -161px;
   box-sizing: border-box;
-  padding: 0;
   padding-left: 60px;
+  padding-top: 20px;
   margin: 0;
 
   flex-direction: column;
@@ -369,8 +389,9 @@ a {
 .header-catalog li {
   padding: 0;
   margin: 0;
-  margin-bottom: 10px;
-  margin-right: 57px;
+  margin-bottom: 5px;
+  margin-right: 65px;
+
 }
 
 .header-catalog a {
@@ -399,7 +420,7 @@ main {
 
 .product-slider {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 57px;
   overflow: hidden;
 }
 
@@ -408,7 +429,7 @@ main {
   position: absolute;
   z-index: 1;
   left: 600px;
-  top: 40px;
+  top: 36px;
   width: 100px;
   height: 7px;
   background-image: url("../img/icons/rect1.svg");
@@ -417,16 +438,20 @@ main {
 
 .slider-navigation {
   position: absolute;
-  right: 68px;
-  bottom: 185px;
-  justify-content: space-around;
+  right: 83px;
+  bottom: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 78px;
+
 }
 
 .slider-navigation .radio-control {
   display: inline-flex;
   width: 10px;
   height: 10px;
-  margin-right: 16px;
+
   border-radius: 50%;
 
   border: 1px solid rgb(0, 0, 0);
@@ -451,11 +476,7 @@ main {
 .slider-navigation input:last-child:checked ~ .slider-list {
   transform: translateX(-66.6666%);
 }
-/* Кирилл, дело в том, что если я меня порядок флексов в article  class="productslider"
-то перестает работать радио, и я не могу найти почему! на работу этой формы не влияют дргуие селекторы
-но почему то не работает. ФАктически если поменять местами в разметке слайдер лист и слайдер навигейшн, то радио
-не реагирует. почему я хо чу поменять, потому что насколько я поняла чтоб застаивть слайдер лист реагировать
-на включение кнопок радио , нужно чтоб этот слайдер лист стоял ниже в коде и далее с помощью "~". Что я тут делаю не так, ведь моя логика проста*/
+
  .slider-list {
   width: 300%;
   display: flex;
@@ -493,6 +514,10 @@ main {
   position: relative;
 }
 
+.product-description .link {
+  width: 220px;
+  margin-bottom: 46px;
+}
 .monopod .product-description::after {
   content:" ";
   width: 210px;
@@ -543,7 +568,7 @@ main {
 
 .product-features {
   display: table;
-  margin-top: 45px;
+
   text-align: left;
   vertical-align: middle;
   border: none;
@@ -557,6 +582,7 @@ main {
   font-weight: 300;
   line-height: 20px;
   color: rgb(70, 70, 70);
+  padding-top: 5px;
 }
 
 .product-features th {
@@ -570,12 +596,13 @@ main {
 .catalog {
   display: flex;
   padding: 0;
-  margin-bottom: 175px;
+  margin-bottom: 173px;
   list-style: none;
 }
 
 .catalog li:not(:last-child) {
   margin-right: 40px;
+
 }
 
 .catalog a {
@@ -585,7 +612,7 @@ main {
   color: rgb(0, 0, 0);
 }
 
-.catalog li::before {
+.catalog li a::before {
   content:" ";
   display: table;
   width: 160px;
@@ -595,52 +622,55 @@ main {
   background-color: rgb(247, 226, 150);
 }
 
-.catalog li:nth-child(1)::before {
+.catalog li:nth-child(1) a::before {
   background-image: url("../img/icons/popular-1.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.catalog li:nth-child(2)::before {
+.catalog li:nth-child(2) a::before {
   background-image: url("../img/icons/popular-2.svg");
   background-repeat: no-repeat;
   background-position: 50% 100%;
 }
 
-.catalog li:nth-child(3)::before {
+.catalog li:nth-child(3) a::before {
   background-image: url("../img/icons/popular-3.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.catalog li:nth-child(4)::before {
+.catalog li:nth-child(4) a::before {
   background-image: url("../img/icons/popular-4.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
 
-.catalog li:nth-child(5)::before {
+.catalog li:nth-child(5) a::before {
   background-image: url("../img/icons/popular-5.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.catalog li:nth-child(6)::before {
+.catalog li:nth-child(6) a::before {
   background-image: url("../img/icons/popular-6.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
-.catalog li:hover::before,
-.catalog li:focus::before {
+.catalog li a:hover::before,
+.catalog li a:focus::before {
   background-color: rgb(240, 197, 46);
 }
 
-.catalog li:active {
-  opacity: 0.3;
+.catalog li a:active {
+  color: rgba(0, 0, 0, 0.6);
 }
 
+.catalog li a:active::before {
+  background-image: opacity(0.6);
+}
 /* при наведении на элементы каталога включается опасити,
 которая нужна только для иконки всефдожлемента. но не затрагивает
 его фон. наверно енадо сделать два псевдоэлемента? один для фона
@@ -649,75 +679,90 @@ main {
 .services {
   height: 288px;
   padding-top: 1px;
-  margin-bottom: 100px;
+  margin-bottom: 93px;
 
   background-color: rgb(229, 229, 229);
 }
 
 .services .container {
   display: flex;
-  margin-top: -105px;
+  height: 319px;
+  margin-top: -100px;
   overflow: hidden;
 }
 
 .service-navigation {
-  min-width: 284px;
-  height: 319px;
-  box-sizing: border-box;
-  border-right: 7px solid rgb(0, 0, 0);
-}
-
-.service-navigation ul {
   display: flex;
   flex-direction: column;
+  min-width: 277px;
+  height: 319px;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   margin-top: 80px;
-  list-style: none;
 }
 
-.service-navigation li {
+.service-navigation input {
+  display: none;
+}
+
+.service-button {
   display: block;
+  width: 160px;
   margin-bottom: 20px;
-}
-
-.service-navigation li:hover,
-.service-navigation li:focus {
-  color: rgb(240, 197, 46);
-  background-color: black;
-}
-
-.service-button button {
-  width: 100%;
-  padding-left: 25px;
-  text-align: left;
+  text-align: center;
   border: none;
   background-color: transparent;
 }
 
-.service-description ul {
+.service-navigation input:checked + .link::before {
+  height: 100%;
+  width: 277px;
+  background-color: rgb(0, 0, 0);
+}
+
+.service-navigation input:checked + .link{
+  color: rgb(247, 225, 132);
+}
+
+.service-navigation input[id="delivery"]:checked ~ .service-description {
+  transform: translateX(-33.3333%);
+}
+
+.service-navigation input[id="warranty"]:checked ~ ul {
+  transform: translateX(-66.6666%);
+}
+/* Нужна помощь друга или зала, я не */
+.service-description {
+  border-left: 7px solid rgb(0, 0, 0);
   display: flex;
+  position: relative;
   width: 300%;
+  height: 319px;
   margin: 0;
   padding: 0;
-  padding-top: 30px;
+  padding-top: 25px;
   list-style: none;
 }
 
-.service-description li {
-  width: 33.3333%;
+.service-item {
+  margin-left: 115px;
+  width: 700px;
 }
 
 .service-description h3 {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 48px;
   color: rgb(0, 0, 0);
+  letter-spacing: 0.04em;
 }
-
+.service-description p {
+  letter-spacing: 0.02em;
+}
 .service-description h3::after {
   content: " ";
   position: absolute;
@@ -725,86 +770,161 @@ main {
   display: table;
   width: 136px;
   height: 164px;
-  right: 130px;
-  bottom: -130px;
+  right: 5px;
+  bottom: -128px;
 
   background-image: url(../img/icons/delivery.svg);
   }
-
-.service-item {
-  margin-left: 115px;
-}
-
+/* поменяй картинки на каждым слайде */
+/* подобрать рабочие селекторы для подчеркивания в навигации черным и смены картинок */
 .brands {
-  margin-bottom: 100px;
+  margin-bottom: 87px;
 }
 .brands-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.brandlist-item a {
-  filter: grayscale(100%) opacity(0.2);
+.brandlist-item:not(:last-child){
+  margin-right: 40px;
 }
 
-.brandlist-item a:hover,
-.brandlist-item a:focus {
-  filter: none;
+.brandlist-item {
+  position: relative;
 }
 
+.dji:hover::after {
+  position: absolute;
+  content:"";
+  display: table;
+  width: 260px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/content/logo-1-hover.png");
+}
+
+.spgadgets:hover::after {
+  position: absolute;
+  content:"";
+  display: table;
+  width: 260px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/content/logo-2-hover.png");
+}
+
+.gopro:hover::after {
+  position: absolute;
+  content:"";
+  display: table;
+  width: 260px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/content/logo-3-hover.png");
+}
+
+.vive:hover::after {
+  position: absolute;
+  content:"";
+  display: table;
+  width: 260px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url("../img/content/logo-4-hover.png");
+}
 .info-contacts {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 90px;
+  justify-content: flex-start;
+  margin-bottom: 102px;
 }
 
+.info-contacts .link {
+  width: 260px;
+}
+.info {
+  margin-right: 40px;
+}
 .info,
 .contacts {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: flex-start;
   height: 550px;
+  letter-spacing: 0.005em;
 }
 
-.info h2,
-.contacts h2 {
+.info h3,
+.contacts h3 {
+  position: relative;
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 48px;
   color: rgb(0, 0, 0);
+  margin-top: 50px;
+  margin-bottom: 28px;
+  letter-spacing: 0;
+
 }
 
+.info h3::before,
+.contacts h3::before {
+  content: "";
+  display: table;
+  position: absolute;
+  left: 0;
+  top: -53px;
+  width: 80px;
+  height: 7px;
+  background-color: rgb(0, 0, 0);
+}
+
+.couriers {
+  list-style: circle;
+  margin: 53px 0 0 20px;
+  padding: 0;
+
+}
 .couriers a {
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 16px;
   line-height: 40px;
   color: rgb(0, 0, 0);
+  margin-left: 15px;
 }
 
 .half-width {
   width: 50%;
+  position: relative;
+}
+.info-contacts .thumb {
+  margin-top: 25px;
 }
 
+.info-contacts .link {
+  position: absolute;
+  bottom: -23px;
+
+}
 .main-footer {
   background-color: rgb(70, 70, 70);
-}
-
-.footer-logo img {
-  fill: rgb(240, 197, 46);
 }
 
 .footer-navigation {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 1160px;
   min-height: 323px;
   margin: 0 auto;
-  padding-top: 50px;
+  padding: 65px 0 62px 0;
   box-sizing: border-box;
 
   font-size: 15px;
@@ -825,12 +945,57 @@ main {
   list-style: none;
 }
 
-.footer-user-navigation {
+.footer-navigation .footer-logo:hover,
+.footer-navigation .footer-logo:focus {
+  opacity: 0.6;
+}
+
+.footer-navigation .footer-logo:active,
+.footer-navigation .footer-logo:visited {
+  opacity: 0.3;
+}
+.footer-navigation .footer-user-navigation {
   justify-content: space-between;
+  margin-bottom: 25px;
+
 }
 
 .footer-user-navigation li:not(:first-child){
-  margin-left: 65px;
+  margin-left: 40px;
+}
+
+.footer-user-navigation li:first-child{
+  margin-right: 5px;
+}
+
+.footer-user-navigation .login-link::before {
+  content: " ";
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  margin-right: 5px;
+
+  background: url("../img/icons/user-footer.svg") no-repeat;
+}
+
+.footer-user-navigation .compare::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+
+  background: url("../img/icons/compare-footer.svg") no-repeat;
+}
+
+.footer-user-navigation .cart::before {
+  content: " ";
+  display: inline-block;
+  width: 13px;
+  height: 12px;
+  margin-right: 5px;
+
+  background: url("../img/icons/cart-footer.svg") no-repeat;
 }
 
 .footer-user-navigation a{
@@ -847,16 +1012,33 @@ main {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.footer-user-navigation li:hover::before,
+.footer-user-navigation li:focus::before {
+  opacity: 0.6;
+}
+
+.footer-user-navigation li:active::before,
+.footer-user-navigation li:visited::before {
+  opacity: 0.3;
+}
+
 .site-navigation-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.site-navigation-wrapper p{
-  margin: 0;
+.site-navigation-wrapper.social {
+  margin-top: auto;
+  align-items: baseline;
+
 }
 
-.footer-site-navigation li{
+.site-navigation-wrapper p {
+  margin: 0;
+  margin-top: -4px;
+}
+
+.footer-site-navigation li:not(:last-child){
   margin-right: 40px;
 }
 
@@ -913,7 +1095,8 @@ main {
 .modal {
   width: 960px;
   box-shadow: 0 8px 20px 0 rgb(181, 181, 181);
-  display: none;
+  display: block;
+  position:fixed;
 }
 
 .modal label{
@@ -939,6 +1122,7 @@ main {
 .map {
   height: 559px;
   box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
+  position: fixed;
 }
 /* страница каталога */
 .inner-page .header-navigation {
