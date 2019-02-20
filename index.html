@@ -27,7 +27,6 @@
 
         <div class="header-site-navigation">
           <div><a href="device-catalog.html">Каталог товаров</a>
-            <!-- Убрала спан с плюсом - добавлю его как псевдоэлемент -->
             <ul class="header-catalog hidden">
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
@@ -35,6 +34,7 @@
               <li><a href="#">Фитнес-браслеты</a></li>
               <li><a href="#">Умные часы</a></li>
               <li><br></li>
+              <!-- нужно заменить бр на что то прозачное чтоб не превышать лимит бр -->
               <li><a href="#">Квадрокоптеры</a></li>
             </ul>
           </div>
@@ -54,16 +54,12 @@
         <h1 class="visually-hidden">Интернет-магазин Device</h1>
         <article class="product-slider">
           <h2 class="visually-hidden">Рекомендуем</h2>
-          <div class="slider-positioner">
-            <div class="slider-navigation">
-              <input class="visually-hidden" type="radio" name="slider" id="slider-1" checked>
-              <label class="radio-control" for="slider-1"></label>
-              <input class="visually-hidden" type="radio" name="slider" id="slider-2" >
-              <label class="radio-control" for="slider-2"></label>
-              <input class="visually-hidden" type="radio" name="slider" id="slider-3" >
-              <label class="radio-control" for="slider-3"></label>
-            </div>
-          </div>
+          <input type="radio" name="slider" id="slide-1" hidden checked>
+          <input type="radio" name="slider" id="slide-2" hidden>
+          <input type="radio" name="slider" id="slide-3" hidden>
+          <label for="slide-1" class="radio-control"></label>
+          <label for="slide-2" class="radio-control"></label>
+          <label for="slide-3" class="radio-control"></label>
           <ul class="slider-list">
             <li class="slider-item monopod">
               <img class="product-photo" src="img/content/slider-1.png" alt="Селфи-палка" width="384" height="486">
