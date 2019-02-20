@@ -57,9 +57,11 @@
           <input type="radio" name="slider" id="slide-1" hidden checked>
           <input type="radio" name="slider" id="slide-2" hidden>
           <input type="radio" name="slider" id="slide-3" hidden>
-          <label for="slide-1" class="radio-control"></label>
-          <label for="slide-2" class="radio-control"></label>
-          <label for="slide-3" class="radio-control"></label>
+          <div class="slider-navigation">
+            <label for="slide-1" class="radio-control"></label>
+            <label for="slide-2" class="radio-control"></label>
+            <label for="slide-3" class="radio-control"></label>
+          </div>
           <ul class="slider-list">
             <li class="slider-item monopod">
               <img class="product-photo" src="img/content/slider-1.png" alt="Селфи-палка" width="384" height="486">
@@ -86,8 +88,7 @@
             <li class="slider-item tracker">
               <img class="product-photo" src="img/content/slider-2.png" alt="Фитнес-браслет" width="345" height="485">
               <div class="product-description">
-                <h3>Худеем
-                  правильно!</h3>
+                <h3>Худеем<br>правильно!</h3>
                 <p class="product-info">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
                 <a class="link" href="#">Подробнее</a>
                 <table class="product-features">
@@ -123,13 +124,37 @@
         </article>
         <section class="main-catalog">
           <h2 class="visually-hidden">Каталог</h2>
-          <ul class="catalog">
-            <li><a href="#">Виртуальная реальность</a></li>
-            <li><a href="#">Моноподы для селфи</a></li>
-            <li><a href="#">Экшн-камеры</a></li>
-            <li><a href="#">Фитнес-браслеты</a></li>
-            <li><a href="#">Умные часы</a></li>
-            <li><a href="#">Квадрокоптеры</a></li>
+          <ul>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Виртуальная реальность</a>
+            </li>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Моноподы для селфи</a>
+            </li>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Экшн-камеры</a>
+            </li>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Фитнес-браслеты</a>
+            </li>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Умные часы</a>
+            </li>
+            <li class="catalog-li">
+              <a href="#">
+                <span></span>
+                Квадрокоптеры</a>
+            </li>
           </ul>
         </section>
       </div>
@@ -137,39 +162,40 @@
         <div class="container">
           <div class="service-navigation">
             <h2 class="visually-hidden">Сервис</h2>
-            <input type="radio" name="services-controls" id="delivery" checked>
+            <input type="radio" name="services-controls" id="delivery" hidden checked>
             <label for="delivery" class="service-button link">Доставка</label>
-            <input type="radio" name="services-controls" id="warranty">
+            <input type="radio" name="services-controls" id="warranty" hidden>
             <label for="warranty" class="service-button link">Гарантия</label>
-            <input type="radio" name="services-controls" id="credit">
+            <input type="radio" name="services-controls" id="credit" hidden>
             <label for="credit" class="service-button link">Кредит</label>
-          </div>
-          <ul class="service-description">
-            <li class="service-item">
-              <h3>Доставка</h3>
-              <p class="service-info">
-                Мы с удовольствием доставим ваш товар прямо к вашему
-                подъезду совершенно бесплатно! Ведь мы неплохо
-                заработаем, поднимая его на ваш этаж.
-              </p>
-            </li>
-            <li class="service-item">
-              <h3>Гарантия</h3>
-              <p class="service-info">
-                Если из-за возгорания купленного у нас товара у вас сгорит
-                дом — не переживайте, мы выдадим вам новый.
-                Товар, не дом, конечно же.
-              </p>
-            </li>
-            <li class="service-item">
-              <h3>Кредит</h3>
-              <p class="service-info">
-                Залезть в долговую яму стало проще! Кредитные
-                консультанты подберут для вас наиболее выгодные
-                условия кредита. Выгодные для нашего банка, разумеется.
-              </p>
-            </li>
+            <ul class="service-description">
+              <li class="service-item">
+                <h3>Доставка</h3>
+                <p class="service-info">
+                  Мы с удовольствием доставим ваш товар прямо к вашему
+                  подъезду совершенно бесплатно! Ведь мы неплохо
+                  заработаем, поднимая его на ваш этаж.
+                </p>
+              </li>
+              <li class="service-item">
+                <h3>Гарантия</h3>
+                <p class="service-info">
+                  Если из-за возгорания купленного у нас товара у вас сгорит
+                  дом — не переживайте, мы выдадим вам новый.
+                  Товар, не дом, конечно же.
+                </p>
+              </li>
+              <li class="service-item">
+                <h3>Кредит</h3>
+                <p class="service-info">
+                  Залезть в долговую яму стало проще! Кредитные
+                  консультанты подберут для вас наиболее выгодные
+                  условия кредита. Выгодные для нашего банка, разумеется.
+                </p>
+              </li>
           </ul>
+          </div>
+
         </div>
       </section>
       <section class="brands">
@@ -227,7 +253,7 @@
             <p>
               Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
             </p>
-            <a href="#">
+            <a href="https://goo.gl/maps/NYZKmdtCYHJ2">
               <img class="thumb" src="img/content/map.jpg" alt="Миниатюра карты месторасположения офиса интернет-магазина Девайс" width="560" height="222">
             </a>
             <a class="link" href="#">Напишите нам</a>
