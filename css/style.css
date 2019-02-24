@@ -1187,12 +1187,85 @@ main {
 
 /* модальные окна */
 .modal {
+
+  z-index: 10;
   width: 960px;
-  box-shadow: 0 8px 20px 0 rgb(181, 181, 181);
-  display: block;
-  position:fixed;
+  box-sizing: border-box;
+  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.7);
+  /* уточни тень */
+  left: 50%;
+  top: 120px;
+  margin-left: -480px;
+
+
 }
 
+.write-us {
+  position: fixed;
+  height: 553px;
+  padding: 95px 100px;
+  background-color: rgb(255, 255, 255);
+}
+
+.popup {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.write-item {
+  width: 360px;
+}
+
+
+.write-item input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.textarea-item {
+  width: 760px;
+}
+
+.textarea-item textarea {
+  box-sizing: border-box;
+  padding: 15px 20px;
+  width: 100%;
+  min-height: 155px;
+
+}
+.map {
+  position: absolute;
+  height: 560px;
+
+}
+
+.map image {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+/* выроятно тут не фиксед а абсолют*/
+
+.modal .close {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0;
+  right: 20px;
+  top: 10px;
+}
 .modal label {
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 18px;
@@ -1207,16 +1280,10 @@ main {
   background-color: rgb(242, 242, 242);
 }
 
-.write-us {
-  height: 553px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
-}
-
-.map {
-  height: 559px;
-  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
-  position: fixed;
+.modal .link {
+  border: none;
+  background-color: transparent;
+  width: 200px;
 }
 /* страница каталога */
 
