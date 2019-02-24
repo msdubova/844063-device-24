@@ -1222,7 +1222,7 @@ main {
 
 .inner-page .header-navigation {
   min-height: 186px;
-  margin-bottom: 45px;
+  margin-bottom: 38px;
 }
 
 .inner-page main {
@@ -1241,13 +1241,10 @@ main {
   color: rgb(0, 0, 0);
   font-weight: bold;
   line-height: 48px;
+  letter-spacing: 0.01em;
   padding: 0;
   margin: 0;
-  margin-bottom: 32px;
-}
-
-.wrapper {
-  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .wrapper h2 {
@@ -1270,11 +1267,11 @@ main {
   margin: 0;
   padding: 0;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 43px;
 }
 
 .breadcrumbs li {
-  margin-right: 40px;
+  margin-right: 38px;
   position: relative;
   display: inline-block;
   height: 30px;
@@ -1314,7 +1311,6 @@ main {
 
 .inner-page .container {
   width: 1160px;
-  /* height */
   padding-left: 60px;
   margin: 0 auto;
   display: flex;
@@ -1322,21 +1318,24 @@ main {
 }
 
 .inner-page .wrapper {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) 70px, transparent 70px, transparent),
-              linear-gradient(to right, rgb(238, 238, 238), rgb(238,238, 238) 30%, transparent 30%, transparent);
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(to right, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
+    linear-gradient(to right, rgb(238, 238, 238), rgb(238, 238, 238) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255));
   background-repeat: no-repeat, no-repeat;
+  background-size: 100% 70px, 100% 100%;
 }
 
 
 .inner-page .filters {
-  width: 268px;
+  width: 270px;
 }
 
 .inner-page .filters fieldset {
   border: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 38px;
+  padding-bottom: 25px;
 }
 
 .filters form {
@@ -1352,10 +1351,68 @@ main {
   margin: 0;
   padding: 0;
   padding-top: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   width: 200px;
   color: rgb(0, 0, 0);
   border-top: 2px solid rgb(0, 0, 0);
+}
+
+.range-lifter {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.range-controls {
+  position: relative;
+}
+
+.range-lifter .scale {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(219, 219, 219);
+}
+
+.range-lifter .bar {
+  width: 60%;
+  height: 100%;
+  background-color: rgb(145, 201, 47);
+}
+
+.range-lifter .toggle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color:rgb(171, 171, 171);
+  border: 8px solid rgb(255, 255, 255);
+  box-shadow: 0 2px 1px 0px rgb(218, 218, 218);
+  top: -9px;
+  cursor: pointer;
+}
+
+.toggle-min {
+  left: -5px;
+}
+
+.toggle-max {
+  right: 36%;
+}
+
+.price-controls {
+  font-size: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.price-controls label {
+  font-family: "open_sanslight", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 40px;
+  opacity: 0.2;
+}
+
+.min-price {
+  margin-right: 63px;
 }
 
 .filter-item {
@@ -1501,19 +1558,22 @@ main {
 .inner-page .catalog-wrapper {
   margin: 0;
   padding: 0;
-  width: 760px;
+  width: 830px;
+
   display: flex;
   flex-direction: column;
+  background-color: rgb(255, 255, 255);
 }
 
 .inner-page .sortings {
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-items: center;
   box-sizing: border-box;
   height: 70px;
   margin-bottom: 70px;
+  padding-left: 70px;
+  background-color: rgb(235, 235, 235);
 }
 
 .sortings ul {
@@ -1524,7 +1584,7 @@ main {
 }
 
 .sortings h2 {
-  margin-right: 55px;
+  margin-right: 50px;
 }
 
 .sortings .sort-order {
@@ -1535,17 +1595,18 @@ main {
 .inner-page .sort-order {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .sort-type li:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 30px;
 }
 
 .sort-type a {
   font-family: "open_sanslight";
   font-size: 14px;
   line-height: 18px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
   text-transform: none;
 
   color: rgb(0, 0, 0);
@@ -1590,6 +1651,7 @@ main {
 .inner-catalog {
   width: 100%;
   box-sizing: border-box;
+  padding-left: 70px;
 }
 
  .inner-catalog .catalog-list {
@@ -1665,15 +1727,14 @@ main {
 }
 
 .catalog-item-price {
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroyLight", "Arial", sans-serif;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 300;
 
   line-height: 24px;
   letter-spacing: 0.2px;
   color: rgb(70, 70, 70);
 }
-/* подсключить тонкий гилрой шрифт */
 
 .catalog-item-image {
   max-width: 360px;

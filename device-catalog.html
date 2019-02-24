@@ -65,11 +65,24 @@
             <form action="https://echo.htmlacademy.ru" method="get">
               <fieldset>
                 <legend>Стоимость</legend>
-                <input type="range" min="0" max="7500" step="1" value="5000" list="rangeList1" aria-label="Диапазон стоимости товаров в каталоге: от 0 до 7500 рублей">
+                <!-- <input type="range" min="0" max="7500" step="1" value="5000" list="rangeList1" aria-label="Диапазон стоимости товаров в каталоге: от 0 до 7500 рублей">
                 <datalist id="rangeList1">
                   <option value="0" label="от 0">
                   <option value="5000" label="до 5000">
-                </datalist>
+                </datalist> -->
+                <div class="range-lifter">
+                  <div class="range-controls">
+                    <div class="scale">
+                      <div class="bar"></div>
+                    </div>
+                    <div class="toggle toggle-min"></div>
+                    <div class="toggle toggle-max"></div>
+                  </div>
+                  <div class="price-controls">
+                    <label class="min-price">от 0</label>
+                    <label class="max-price">до 5000</label>
+                  </div>
+                </div>
 
 
                 <!-- С ползуноком непонятно. В скринкастах по лекциям диапазон с ползунком имитуриют, нужно ло стилизовать настоящий ползунок или сымитировать как в демках? -->
