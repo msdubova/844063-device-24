@@ -34,8 +34,7 @@
                 <li><a href="#">Экшн-камеры</a></li>
                 <li><a href="#">Фитнес-браслеты</a></li>
                 <li><a href="#">Умные часы</a></li>
-                <li><br></li>
-                <!-- нужно заменить бр на что то прозачное чтоб не превышать лимит бр -->
+                <li class="wrap-line">Перенос</li>
                 <li><a href="#">Квадрокоптеры</a></li>
               </ul>
             </div>
@@ -51,7 +50,7 @@
       </header>
 
     <main>
-      <div class="container">
+      <div class="container bread">
         <h1 class="page-title">Моноподы для селфи</h1>
         <ul class="breadcrumbs">
           <li><a href="index.html">Главная</a></li>
@@ -73,7 +72,7 @@
                 </datalist>
 
 
-                <!-- Ползунок должен показывать выбранное значение функцией output???? -->
+                <!-- С ползуноком непонятно. В скринкастах по лекциям диапазон с ползунком имитуриют, нужно ло стилизовать настоящий ползунок или сымитировать как в демках? -->
               </fieldset>
               <fieldset class="color">
                 <legend>Цвет</legend>
@@ -156,10 +155,6 @@
                       </h3>
                       <b class="catalog-item-price">500 руб.</b>
                     </span>
-                    <p class="catalog-item-buttons hidden">
-                      <a class="link" href="#">В корзину</a>
-                      <button class="compare-btn" type="button">Добавить к сравнению</button>
-                    </p>
                   </li>
                   <li class="catalog-item">
                     <p class="catalog-item-image">
@@ -175,10 +170,6 @@
                       </h3>
                       <b class="catalog-item-price">1500 руб.</b>
                     </span>
-                    <p class="catalog-item-buttons hidden">
-                      <a class="link" href="#">В корзину</a>
-                      <button class="compare-btn" type="button">Добавить к сравнению</button>
-                    </p>
                   </li>
                   <li class="catalog-item">
                     <p class="catalog-item-image">
@@ -194,12 +185,8 @@
                     </h3>
                     <b class="catalog-item-price">2500 руб.</b>
                     </span>
-                    <p class="catalog-item-buttons hidden">
-                      <a class="link" href="#">В корзину</a>
-                      <button class="compare-btn" type="button">Добавить к сравнению</button>
-                    </p>
                   </li>
-                  <li class="catalog-item">
+                  <li class="catalog-item new">
                     <p class="catalog-item-image">
                       <div class="item-hover">
                         <button class="link">В корзину</button>
@@ -207,35 +194,29 @@
                       </div>
                       <img src="img/content/item-4.jpg" alt="Селфи-палка Следуй за мной" width="360" height="380">
                     </p>
-                     <span class="prices">
-                    <h3>
-                      <a href="#">Селфи-палка"Следуй за мной"</a>
-                    </h3>
-                    <b class="catalog-item-price">4900 руб.</b>
+                    <span class="prices">
+                      <h3>
+                        <a href="#">Селфи-палка"Следуй за мной"</a>
+                      </h3>
+                      <b class="catalog-item-price">4900 руб.</b>
                     </span>
-                    <p class="catalog-item-buttons hidden">
-                      <a class="link" href="#">В корзину</a>
-                      <button class="compare-btn" type="button">Добавить к сравнению</button>
-                    </p>
                   </li>
                 </ul>
-              <ul class="pagination-list">
-                <li class="pagination-item-back">
-                  <a href="#" aria-label="Переход на страницу">Назад</a>>
-                </li>
-                <li class="pagination-item current-page">
-                  <a href="#" aria-label="Переход на страницу">1</a>
-                </li>
-                <li class="pagination-item">
-                  <a href="#" aria-label="Переход на страницу">2</a>
-                </li>
-                <li class="pagination-item">
-                  <a href="#" aria-label="Переход на страницу">3</a>
-                </li>
-                <li class="pagination-item-forward">
-                  <a href="#" aria-label="Переход на страницу">Вперед</a>
-                </li>
-              </ul>
+              <section class="pagination-list">
+                <a href="#" aria-label="Переход на страницу">Назад</a>
+                <ul>
+                  <li class="pagination-item current-page">
+                    <a href="#" aria-label="Переход на страницу">1</a>
+                  </li>
+                  <li class="pagination-item">
+                    <a href="#" aria-label="Переход на страницу">2</a>
+                  </li>
+                  <li class="pagination-item">
+                    <a href="#" aria-label="Переход на страницу">3</a>
+                  </li>
+                  </ul>
+                <a href="#" aria-label="Переход на страницу">Вперед</a>
+              </section>
             </section>
           </div>
         </div>
