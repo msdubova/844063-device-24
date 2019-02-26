@@ -161,11 +161,11 @@
         <div class="container">
           <div class="service-navigation">
             <h2 class="visually-hidden">Сервис</h2>
-            <input type="radio" name="services-controls" id="delivery" hidden checked>
+            <input type="radio" name="services-controls" id="delivery" checked>
             <label for="delivery" class="service-button link">Доставка</label>
-            <input type="radio" name="services-controls" id="warranty" hidden>
+            <input type="radio" name="services-controls" id="warranty">
             <label for="warranty" class="service-button link">Гарантия</label>
-            <input type="radio" name="services-controls" id="credit" hidden>
+            <input type="radio" name="services-controls" id="credit">
             <label for="credit" class="service-button link">Кредит</label>
             <ul class="service-description">
               <li class="service-item">
@@ -224,7 +224,7 @@
       </section>
       <div class="container">
         <section class="info-contacts">
-          <section class="info half-width">
+          <section class="info">
             <h3>О нас</h3>
             <p>
               Огромный выбор гаджетов не оставит равнодушным гика,
@@ -247,15 +247,15 @@
             </ul>
             <a class="link" href="#">Подробнее о нас</a>
           </section>
-          <section class="contacts half-width">
+          <section class="contacts">
             <h3>Контакты</h3>
             <p>
               Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
             </p>
-            <a href="https://goo.gl/maps/NYZKmdtCYHJ2">
+            <button class="mapping">
               <img class="thumb" src="img/content/map.jpg" alt="Миниатюра карты месторасположения офиса интернет-магазина Девайс" width="560" height="222">
-            </a>
-            <a class="link" href="#">Напишите нам</a>
+            </button>
+            <button class="link feedback" href="#">Напишите нам</button>
           </section>
         </section>
       </div>
@@ -348,13 +348,14 @@
           </ul>
           <p class="footer-copyright">
             <b class="visually-hidden">Разработано</b>
-            <a href="https://htmlacademy.ru">
+            <a href="https://htmlacademy.ru/intensive/htmlcss">
               <img src="img/icons/logo-html.svg" alt="HTML Academy" width="27" height="35">
             </a>
           </p>
         </div>
       </nav>
     </footer>
+
     <section class="modal write-us">
       <h2 class="visually-hidden">Напишите нам</h2>
       <button class="button close">
@@ -376,12 +377,38 @@
         <button class="link" type="submit">Отправить</button>
       </form>
     </section>
-    <section class="modal map ">
+    <section class="modal map">
       <h2 class="visually-hidden">Карта</h2>
       <button class="button close">
-        <a href="https://www.google.com/maps/place/HTML+Academy/@59.9456134,30.324236,16.34z/data=!4m5!3m4!1s0x4696310fca5afc31:0x5f2ac55f567b2400!8m2!3d59.940367!4d30.32376?shorturl=1"><img src="img/icons/modal-close.svg" alt="Закрыть" width="55" height="55"></a>
+        <img src="img/icons/modal-close.svg" alt="Закрыть" width="55" height="55">
       </button>
       <img class="map-full" src="img/content/map-big.jpg" alt="Интернет-магазин Девайс находится по адресу г. Москва, ул. Строителей, 15" width="960" height="560">
     </section>
+    <script>
+      var link  = document.querySelector(".feedback");
+      var map = document.querySelector(".mapping");
+      var popup = document.querySelector(".write-us");
+      var mapbig = document.querySelector(".map");
+      var close = popup.querySelector(".close");
+      var closemap = mapbig.querySelector(".close");
+      var login = popup.querySelector("[name=name-surname]");
+      link.addEventListener("click", function(evt){
+        evt.preventDefault();
+        popup.classList.add("modal-show");
+        login.focus();
+      });
+      close.addEventListener("click", function(evt){
+        evt.preventDefault();
+        popup.classList.remove("modal-show");
+      });
+      map.addEventListener("click", function(evt){
+        evt.preventDefault();
+        mapbig.classList.add("modal-show");
+      });
+      closemap.addEventListener("click", function(evt){
+        evt.preventDefault();
+        mapbig.classList.remove("modal-show");
+      });
+    </script>
   </body>
   </html>
