@@ -1861,11 +1861,6 @@ main {
   margin-right: 40px;
 }
 
-.catalog-item p {
-  margin: 0;
-  padding: 0;
-}
-
 .catalog-item h3 {
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 18px;
@@ -1884,7 +1879,7 @@ main {
 }
 
 .catalog-item .prices {
-  margin-top: 13px;
+  margin-top: 15px;
   margin-bottom: 30px;
   width: 100%;
   display: flex;
@@ -1907,10 +1902,12 @@ main {
 }
 
 .catalog-item-image {
+  margin: 0;
+  padding: 0;
   max-width: 360px;
   max-height: 380px;
   position: relative;
-  opacity: 0.3;
+  /* opacity: 0.3; */
 
 }
 
