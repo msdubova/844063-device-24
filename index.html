@@ -52,9 +52,9 @@
         <h1 class="visually-hidden">Интернет-магазин Device</h1>
         <article class="product-slider">
           <h2 class="visually-hidden">Рекомендуем</h2>
-          <input type="radio" name="slider" id="slide-1" hidden checked>
-          <input type="radio" name="slider" id="slide-2" hidden>
-          <input type="radio" name="slider" id="slide-3" hidden>
+          <input type="radio" name="slider" id="slide-1" checked>
+          <input type="radio" name="slider" id="slide-2">
+          <input type="radio" name="slider" id="slide-3">
           <div class="slider-navigation">
             <label for="slide-1" class="radio-control"></label>
             <label for="slide-2" class="radio-control"></label>
@@ -62,7 +62,9 @@
           </div>
           <ul class="slider-list">
             <li class="slider-item monopod">
-              <img class="product-photo" src="img/content/slider-1.png" alt="Селфи-палка" width="384" height="486">
+              <span>
+                <img class="product-photo" src="img/content/slider-1.png" alt="Селфи-палка" width="384" height="486">
+              </span>
               <div class="product-description">
                 <h3>Делай селфи,<br>
                   как Бен Стиллер!</h3>
@@ -84,7 +86,9 @@
               </div>
             </li>
             <li class="slider-item tracker">
-              <img class="product-photo" src="img/content/slider-2.png" alt="Фитнес-браслет" width="345" height="485">
+              <span>
+                <img class="product-photo" src="img/content/slider-2.png" alt="Фитнес-браслет" width="345" height="485">
+              </span>
               <div class="product-description">
                 <h3>Худеем<br>правильно!</h3>
                 <p class="product-info">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
@@ -100,7 +104,9 @@
               </div>
             </li>
             <li class="slider-item copter">
-              <img class="product-photo" src="img/content/slider-3.png" alt="Квадрокоптер" width="526" height="334">
+              <span>
+                  <img class="product-photo" src="img/content/slider-3.png" alt="Квадрокоптер" width="526" height="334">
+              </span>
               <div class="product-description">
                 <h3>Порхает как бабочка, жалит как пчела!</h3>
                 <p class="product-info">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
@@ -384,31 +390,6 @@
       </button>
       <img class="map-full" src="img/content/map-big.jpg" alt="Интернет-магазин Девайс находится по адресу г. Москва, ул. Строителей, 15" width="960" height="560">
     </section>
-    <script>
-      var link  = document.querySelector(".feedback");
-      var map = document.querySelector(".mapping");
-      var popup = document.querySelector(".write-us");
-      var mapbig = document.querySelector(".map");
-      var close = popup.querySelector(".close");
-      var closemap = mapbig.querySelector(".close");
-      var login = popup.querySelector("[name=name-surname]");
-      link.addEventListener("click", function(evt){
-        evt.preventDefault();
-        popup.classList.add("modal-show");
-        login.focus();
-      });
-      close.addEventListener("click", function(evt){
-        evt.preventDefault();
-        popup.classList.remove("modal-show");
-      });
-      map.addEventListener("click", function(evt){
-        evt.preventDefault();
-        mapbig.classList.add("modal-show");
-      });
-      closemap.addEventListener("click", function(evt){
-        evt.preventDefault();
-        mapbig.classList.remove("modal-show");
-      });
-    </script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
