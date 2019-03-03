@@ -37,7 +37,6 @@
 body {
   margin: 0;
   padding: 0;
-
   font-family: "open_sanslight", "Arial", sans-serif;
   font-size: 15px;
   letter-spacing: 0.014em;
@@ -89,9 +88,7 @@ a {
   left: 0;
   transform: translateY(-50%);
   vertical-align: middle;
-
   background-color: rgb(240, 197, 46);
-
   transition: height 0.3s;
 }
 
@@ -116,12 +113,10 @@ a {
   padding: 0 60px;
   padding-top: 1px;
   box-sizing: border-box;
-
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.01em;
   color: rgba(0, 0, 0, 0.3);
-
   background-color: rgb(247, 226, 150);
 }
 
@@ -141,7 +136,6 @@ a {
 .header-logo:active {
   opacity: 0.3;
 }
-
 
 .search-navigation {
   display: flex;
@@ -177,7 +171,6 @@ a {
   position: absolute;
   top: 16px;
   left: 2px;
-
   background-image: url("../img/icons/search.svg");
   background-repeat: no-repeat;
 }
@@ -262,7 +255,6 @@ a {
   width: 13px;
   height: 12px;
   margin-right: 14px;
-
   background: url("../img/icons/user.svg") no-repeat;
 }
 
@@ -272,7 +264,6 @@ a {
   width: 10px;
   height: 10px;
   margin-right: 10px;
-
   background: url("../img/icons/compare.svg") no-repeat;
 }
 
@@ -282,7 +273,6 @@ a {
   width: 12px;
   height: 12px;
   margin-right: 10px;
-
   background: url("../img/icons/cart.svg") no-repeat;
 }
 
@@ -342,7 +332,6 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
 }
 
 .header-services li:nth-child(2) {
@@ -381,16 +370,14 @@ a {
   padding-left: 60px;
   padding-top: 20px;
   margin: 0;
-
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
   list-style: none;
-
   background-color: rgb(247, 226, 150);
 }
-/* как должен вести себ выпадающий список при переполнении???? */
+
 .header-catalog li {
   padding: 0;
   margin: 0;
@@ -407,7 +394,6 @@ a {
   display: block;
   padding: 0;
   margin: 0;
-
   font-family: "open_sanslight", "Arial", sans-serif;
   font-size: 15px;
   line-height: 36px;
@@ -423,7 +409,6 @@ main {
   width: 1160px;
   box-sizing: border-box;
   margin: 0 auto;
-
   color: rgb(70, 70, 70);
 }
 
@@ -463,13 +448,13 @@ main {
   bottom: 145px;
   right: 82px;
   z-index: 3;
+  font-size: 0;
 }
 
  .radio-control {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-
   border: 1px solid rgb(0, 0, 0);
 }
 
@@ -509,9 +494,24 @@ main {
   border-radius: 50%;
 }
 
-.product-slider input:focus ~ div label {
-  outline: outset lightblue;
-  /* я не знаю как сделать фокус с клавиатуры , чтоб подчеркивались кнопки в рамках стиля, ведб при ховепе и фокусе они не выделены в стайлгайде  */
+.product-slider input#slide-1:checked:focus ~ div label:nth-of-type(1) {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.product-slider input#slide-2:checked:focus ~ div label:nth-of-type(2) {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+.product-slider input#slide-3:checked:focus ~ div label:nth-of-type(3) {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
 }
 
 .slider-list {
@@ -548,7 +548,6 @@ main {
 
 .product-description {
   width: 560px;
-  /* min-height: 480px; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -585,7 +584,6 @@ main {
   width: 550px;
   min-height: 110px;
   word-wrap: break-word;
-
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 56px;
@@ -646,7 +644,7 @@ main {
 .main-catalog ul {
   display: flex;
   padding: 0;
-  margin-bottom: 180px;
+  margin-bottom: 179px;
   list-style: none;
 }
 
@@ -713,32 +711,21 @@ main {
 }
 
 .services {
+  margin: 0;
+  padding: 0;
   min-height: 288px;
   padding-top: 1px;
   margin-bottom: 93px;
-
   background-color: rgb(229, 229, 229);
 }
 
 .services .container {
-  display: flex;
-  height: 319px;
-  /* как тут бороться с выпаданием */
-  margin-top: -100px;
   width: 1160px;
-  overflow: hidden;
-}
-
-.service-navigation {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  width: 277px;
-  height: 319px;
-  box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
+  margin-top: -100px;
   padding: 0;
-  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
 }
 
 .services input {
@@ -749,78 +736,54 @@ main {
   clip: rect(0, 0, 0, 0);
 }
 
+.service-navigation {
+  margin: 0;
+  padding: 0;
+  width: 284px;
+  box-sizing: border-box;
+  min-height: 319px;
+  display: flex;
+  flex-direction: column;
+  border-right: 7px solid rgb(0, 0, 0);
+  margin-bottom: 70px;
+  padding-top: 80px;
+}
+
 .service-button {
   display: block;
   width: 160px;
-  margin-bottom: 25px;
   text-align: center;
   border: none;
   background-color: transparent;
 }
 
-.service-navigation input:focus + .link {
-  outline: outset lightblue;
-}
-
-.service-navigation input:checked + .link::before {
-  height: 100%;
-  width: 277px;
-  background-color: rgb(0, 0, 0);
-}
-
-.service-navigation input:checked + .link {
-  color: rgb(247, 225, 132);
-}
-
-.service-navigation input#warranty:checked ~ ul {
-  transform: translateY(-387px);
-}
-
-.service-navigation input#credit:checked ~ ul {
-  transform: translateY(-774px);
-}
-
-.service-navigation .link {
-  padding: 8px 0;
-}
-
-.service-button.link:active {
-  color: rgb(247, 225, 132);
-}
-
-.service-button.link:active::before {
-  height: 100%;
-  width: 277px;
-  background-color: rgb(0, 0, 0);
+.service-button:not(:last-of-type) {
+  margin-bottom: 20px;
 }
 
 .service-description {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  height: 1161px;
   margin: 0;
   padding: 0;
-  margin-top: -80px;
-  margin-left: -6px;
-  padding-top: 25px;
-  list-style: none;
-  width: 700px;
-  top: 0;
-  left: 283px;
-  border-left: 7px solid rgb(0, 0, 0);
+  padding-left: 115px;
+  padding-bottom: 80px;
+  list-style: 0;
+  width: 876px;
+  min-height: 319px;
+  box-sizing: border-box;
   background-color: inherit;
 }
 
 .service-item {
-  margin-left: 115px;
-  height: 387px;
+  display: none;
+  min-width: 700px;
 }
 
-.service-description h3 {
+.service-item h3 {
   position: relative;
-  margin-bottom: 30px;
-
+  margin: 0;
+  padding: 0;
+  margin-top: 73px;
+  margin-bottom: 34px;
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 47px;
   line-height: 48px;
@@ -828,9 +791,11 @@ main {
   letter-spacing: 0.04em;
 }
 
-.service-description p {
+.service-item p {
   letter-spacing: 0.02em;
   width: 440px;
+  margin: 0;
+  padding: 0;
 }
 
 .service-description h3::after {
@@ -838,7 +803,7 @@ main {
   position: absolute;
   z-index: 1;
   display: table;
-  right: -110px;
+  right: 65px;
   bottom: -128px;
 }
 
@@ -858,6 +823,79 @@ main {
   background-image: url(../img/icons/credit.svg);
   width: 155px;
   height: 185px;
+}
+
+.services input#delivery:checked:focus ~ div .link:first-of-type {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.services input#warranty:checked:focus ~ div .link:nth-of-type(2) {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.services input#credit:checked:focus ~ div .link:nth-of-type(3) {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.services input#delivery:checked ~ div .link:first-of-type {
+  color: rgb(247, 225, 132);
+}
+
+.services input#delivery:checked ~ div .link:first-of-type::before {
+  height: 100%;
+  width: 277px;
+  background-color: rgb(0, 0, 0);
+}
+
+.services input#warranty:checked ~ div .link:nth-of-type(2) {
+  color: rgb(247, 225, 132);
+}
+
+.services input#warranty:checked ~ div .link:nth-of-type(2)::before {
+  height: 100%;
+  width: 277px;
+  background-color: rgb(0, 0, 0);
+}
+
+.services input#credit:checked ~ div .link:nth-of-type(3) {
+  color: rgb(247, 225, 132);
+}
+
+.services input#credit:checked ~ div .link:nth-of-type(3)::before {
+  height: 100%;
+  width: 277px;
+  background-color: rgb(0, 0, 0);
+}
+
+.service-button:active {
+  color: rgb(247, 225, 132);
+}
+
+.service-button:active::before {
+  height: 100%;
+  width: 277px;
+  background-color: rgb(0, 0, 0);
+}
+
+.services input#delivery:checked ~ ul li:first-of-type{
+  display: block;
+}
+
+.services input#warranty:checked ~ ul li:nth-of-type(2){
+  display: block;
+}
+
+.services input#credit:checked ~ ul li:nth-of-type(3) {
+  display: block;
 }
 
 .brands {
@@ -939,8 +977,6 @@ main {
   background-color: transparent;
 }
 
-
-
 .info,
 .contacts {
   display: flex;
@@ -989,6 +1025,7 @@ main {
 .contacts p {
   max-width: 560px;
 }
+
 .couriers {
   list-style: circle;
   margin: 20px 0 0 20px;
@@ -1015,6 +1052,7 @@ main {
 .contacts .mapping {
   padding: 0;
 }
+
 .main-footer {
   display: block;
   background-color: rgb(70, 70, 70);
@@ -1088,6 +1126,7 @@ a[href="login-link.html"] + svg {
 .footer-user-navigation .login-out:active {
   opacity: 0.3;
 }
+
 .footer-user-navigation a {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1100,16 +1139,6 @@ a[href="login-link.html"] + svg {
 .footer-user-navigation a:active {
   color: rgba(255, 255, 255, 0.3);
 }
-
-/*
-.footer-user-navigation li:hover::before,
-.footer-user-navigation li:focus::before {
-  opacity: 0.6;
-}
-
-.footer-user-navigation li:active::before {
-  opacity: 0.3;
-} */
 
 .footer-user-navigation svg {
   fill:rgb(240, 197, 46);
@@ -1185,11 +1214,13 @@ a[href="login-link.html"] + svg {
 .footer-social {
 
 }
+
 .footer-social li {
   display: inline-flex;
   padding: 0;
   margin: 0;
-  margin-right: 20px;}
+  margin-right: 20px;
+}
 
 .footer-social-item a {
   display: inline-flex;
@@ -1222,8 +1253,6 @@ a[href="login-link.html"] + svg {
 .footer-copyright a:active {
   opacity: 0.3;
 }
-
-/* модальные окна */
 
 .modal {
   position: fixed;
@@ -1361,7 +1390,6 @@ a[href="login-link.html"] + svg {
   background-color: transparent;
   width: 200px;
 }
-/* страница каталога */
 
 .inner-page .header-navigation {
   min-height: 186px;
@@ -1376,7 +1404,6 @@ a[href="login-link.html"] + svg {
   display: flex;
   flex-direction: column;
 }
-
 
 .inner-page h1 {
   font-size: 47px;
@@ -1393,7 +1420,6 @@ a[href="login-link.html"] + svg {
 .wrapper h2 {
   display: flex;
   height: 70px;
-  /* оправдана ли тут высота? */
   box-sizing: border-box;
   font-family: "gilroyextrabold", "Arial", sans-serif;
   font-size: 16px;
@@ -1404,7 +1430,6 @@ a[href="login-link.html"] + svg {
   margin: 0;
   align-items: center;
 }
-
 
 .inner-page .breadcrumbs {
   list-style: none;
@@ -1712,7 +1737,7 @@ a[href="login-link.html"] + svg {
 .inner-page .sortings {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   min-height: 70px;
   margin-bottom: 70px;
@@ -1740,6 +1765,7 @@ a[href="login-link.html"] + svg {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .sort-type li:not(:last-child) {
@@ -1798,7 +1824,7 @@ a[href="login-link.html"] + svg {
   padding-left: 70px;
 }
 
- .inner-catalog .catalog-list {
+.inner-catalog .catalog-list {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -1861,7 +1887,6 @@ a[href="login-link.html"] + svg {
   display: block;
   width: 258px;
   word-wrap: unset;
-
 }
 
 .catalog-item .prices {
@@ -1875,8 +1900,8 @@ a[href="login-link.html"] + svg {
 
 .catalog-item:last-child .prices {
   margin-bottom: 18px;
-
 }
+
 .catalog-item-price {
   font-family: "gilroyLight", "Arial", sans-serif;
   font-size: 16px;
@@ -1892,8 +1917,6 @@ a[href="login-link.html"] + svg {
   max-width: 360px;
   max-height: 380px;
   position: relative;
-  /* opacity: 0.3; */
-
 }
 
 .item-hover {
@@ -1973,9 +1996,11 @@ a[href="login-link.html"] + svg {
 .pagination-list > a:first-of-type {
 margin-right: auto;
 }
+
 .pagination-list > a:last-of-type {
   margin-left: auto;
-  }
+}
+
 .pagination-list > a:hover,
 .pagination-list > a:focus {
   background-color: rgb(217, 217, 217);
