@@ -1,40 +1,5 @@
 
 
-// var openform = document.querySelector(".feedback");
-// var popup = document.querySelector(".write-us");
-// var closeform = form.querySelector(".close");
-// var name = popup.querySelector("[name=name-surname]");
-// var mail = popup.querySelector("[name=e-mail]");
-// var text = popup.querySelector("textarea");
-// var form = popup.querySelector("form");
-// var isStorageSupport = true;
-// var storage = "";
-// var openmap = document.querySelector(".mapping");
-// var map = document.querySelector(".map");
-// var closemap = map.querySelector(".close");
-
-// try {
-// storage = localStorage.getItem("name");
-// } catch (err){
-// isStorageSupport = false;
-// }
-
-
-// form.addEventListener ("submit", function(evt){
-// if(!name.value || !mail.value || !text.value){
-// evt.preventDefault();
-// console.log("Введите имя почту и сообщение");
-// }
-// else {
-// if(isStorageSupport){
-// localStorage.setItem("name",name.value);
-// localStorage.setItem("mail",mail.value);
-// localStorage.setItem("text",text.value);
-// }
-// }
-
-// });
-
 
 var openForm = document.querySelector(".feedback");
 var popup = document.querySelector(".write-us");
@@ -72,6 +37,7 @@ openForm.addEventListener("click", function(evt){
 closeForm.addEventListener("click", function(evt){
   evt.preventDefault();
   popup.classList.remove("modal-show");
+  popup.classList.remove("modal-error");
 });
 
 openMap.addEventListener("click", function(evt){
@@ -86,8 +52,11 @@ closeMap.addEventListener("click", function(evt){
 
  form.addEventListener("submit", function(evt){
    if (!first.value || !second.value || !third.value) {
-  evt.preventDefault();
-  console.log("введите данные")
+    evt.preventDefault();
+    popup.classList.remove("modal-error");
+    popup.offsetWidth = popup.offsetWidth;
+    popup.classList.add("modal-error");
+
 } else {
   if(isStorageSupport){
     localStorage.setItem("first", first.value);
@@ -100,7 +69,8 @@ window.addEventListener("keydown", function(evt) {
   if(evt.keyCode === 27) {
     evt.preventDefault();
     if (popup.classList.contains("modal-show")){
-      popup.classList.remove("modal-show")
+      popup.classList.remove("modal-show");
+      popup.classList.remove("modal-error");
     }
     else { if (map.classList.contains("modal-show")) {
       map.classList.remove("modal-show")

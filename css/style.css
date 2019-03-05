@@ -361,7 +361,7 @@ a {
 .header-catalog {
   display: flex;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 1160px;
   height: 160px;
   left: -60px;
@@ -1252,6 +1252,46 @@ a[href="login-link.html"] + svg {
 
 .footer-copyright a:active {
   opacity: 0.3;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -700%);
+  }
+
+  50% {
+    transform: translate(-50%, -20%);
+  }
+
+  80% {
+    transform: translate(-50%, -60%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-53%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-48%, -50%);
+  }
 }
 
 .modal {
