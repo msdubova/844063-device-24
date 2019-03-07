@@ -46,8 +46,8 @@ closeMap.addEventListener("click", function(evt){
   map.classList.remove("modal-show");
 });
 
- form.addEventListener("submit", function(evt){
-   if (!first.value || !second.value || !third.value) {
+form.addEventListener("submit", function(evt){
+  if (!first.value || !second.value || !third.value) {
     evt.preventDefault();
     popup.classList.remove("modal-error");
     popup.offsetWidth = popup.offsetWidth;
@@ -56,19 +56,21 @@ closeMap.addEventListener("click", function(evt){
     if(isStorageSupport){
       localStorage.setItem("first", first.value);
       localStorage.setItem("second", second.value);
-      localStorage.setItem("third", third.value);};}
-
+      localStorage.setItem("third", third.value);
+    }
+  }
 });
 
-window.addEventListener("keydown", function(evt) {
+window.addEventListener("keydown", function(evt){
   if(evt.keyCode === 27) {
     evt.preventDefault();
-    if (popup.classList.contains("modal-show")){
+    if (popup.classList.contains("modal-show")) {
       popup.classList.remove("modal-show");
       popup.classList.remove("modal-error");
     }
-    else { if (map.classList.contains("modal-show")) {
-      map.classList.remove("modal-show")
+    else {
+      if (map.classList.contains("modal-show")) {
+        map.classList.remove("modal-show");
     }
   }
 }
