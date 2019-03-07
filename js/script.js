@@ -1,6 +1,3 @@
-
-
-
 var openForm = document.querySelector(".feedback");
 var popup = document.querySelector(".write-us");
 var closeForm  = popup.querySelector(".close");
@@ -31,7 +28,6 @@ openForm.addEventListener("click", function(evt){
   else {
     first.focus();
   }
-
 });
 
 closeForm.addEventListener("click", function(evt){
@@ -56,12 +52,11 @@ closeMap.addEventListener("click", function(evt){
     popup.classList.remove("modal-error");
     popup.offsetWidth = popup.offsetWidth;
     popup.classList.add("modal-error");
-
-} else {
-  if(isStorageSupport){
-    localStorage.setItem("first", first.value);
-    localStorage.setItem("second", second.value);
-    localStorage.setItem("third", third.value);};}
+  } else {
+    if(isStorageSupport){
+      localStorage.setItem("first", first.value);
+      localStorage.setItem("second", second.value);
+      localStorage.setItem("third", third.value);};}
 
 });
 
@@ -76,5 +71,5 @@ window.addEventListener("keydown", function(evt) {
       map.classList.remove("modal-show")
     }
   }
-  }
+}
 });
