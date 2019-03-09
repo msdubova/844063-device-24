@@ -1,7 +1,7 @@
 @font-face {
   font-style: normal;
   font-weight: 300;
-  font-family: "gilroylight";
+  font-family: "gilroy";
 
   src: local("gilroylight"),
   url("../fonts/gilroylight.woff2") format("woff2"),
@@ -11,7 +11,7 @@
 @font-face {
   font-style: normal;
   font-weight: 900;
-  font-family: "gilroyextrabold";
+  font-family: "gilroy";
 
   src: local("gilroyextrabold"),
   url("../fonts/gilroyextrabold.woff2") format("woff2"),
@@ -21,7 +21,7 @@
 @font-face {
   font-style: normal;
   font-weight: 100;
-  font-family: "open_sanslight";
+  font-family: "open_sans";
 
   src: local("open_sanslight"),
   url("../fonts/opensanslight.woff2") format("woff2"),
@@ -42,10 +42,10 @@ body {
   margin: 0;
   padding: 0;
 
-  font-weight: 300;
+  font-weight: 100;
   font-size: 15px;
   line-height: 30px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgba(0, 0, 0, 0.3);
   letter-spacing: 0.014em;
   letter-spacing: 0.01em;
@@ -77,15 +77,17 @@ a {
   width: 44%;
   padding: 10px 0;
 
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   vertical-align: middle;
   text-align: center;
   color: rgb(0, 0, 0);
   text-transform: uppercase;
   letter-spacing: 0.2em;
+
+  cursor: pointer;
 }
 
 .link::before {
@@ -106,10 +108,8 @@ a {
           transform: translateY(-50%);
 
   -webkit-transition: height 0.3s;
-
-  -o-transition: height 0.3s;
-
-  transition: height 0.3s;
+       -o-transition: height 0.3s;
+          transition: height 0.3s;
 }
 
 .link:hover::before,
@@ -162,12 +162,18 @@ a {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   width: 50%;
   margin-right: 40px;
+}
+
+.search-navigation input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-navigation:hover input:hover::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .search-navigation input[type="search"] {
@@ -251,11 +257,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 27px;
 }
 
@@ -304,9 +310,7 @@ a {
   content: " ";
 
   display: -webkit-inline-box;
-
   display: -ms-inline-flexbox;
-
   display: inline-flex;
   width: 13px;
   height: 12px;
@@ -319,9 +323,7 @@ a {
   content: " ";
 
   display: -webkit-inline-box;
-
   display: -ms-inline-flexbox;
-
   display: inline-flex;
   width: 10px;
   height: 10px;
@@ -334,9 +336,7 @@ a {
   content: " ";
 
   display: -webkit-inline-box;
-
   display: -ms-inline-flexbox;
-
   display: inline-flex;
   width: 12px;
   height: 12px;
@@ -367,8 +367,8 @@ a {
 
 .header-site-navigation {
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .header-site-navigation > div {
@@ -405,8 +405,8 @@ a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 
@@ -418,14 +418,15 @@ a {
 }
 
 .header-site-navigation a {
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
 
-.header-site-navigation div:first-child {
+.header-site-navigation .site-navigation-column1 {
   position: relative;
 }
 
@@ -433,7 +434,7 @@ a {
   visibility: hidden;
 }
 
-.header-site-navigation div:first-child:hover .hidden {
+.site-navigation-column1:hover .hidden {
   visibility: visible;
 }
 
@@ -444,21 +445,19 @@ a {
   z-index: 3;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -ms-flex-line-pack: start;
-      align-content: flex-start;
+  align-content: flex-start;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 1160px;
@@ -490,14 +489,15 @@ a {
   margin: 0;
   padding: 0;
 
+  font-weight: 100;
   font-size: 15px;
   line-height: 36px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   text-transform: none;
   letter-spacing: 0.01em;
 }
 
-main {
+.main-section {
   margin-top: -112px;
 }
 
@@ -515,7 +515,7 @@ main {
 
   min-height: 486px;
   margin: 0;
-  margin-bottom: 107px;
+  margin-bottom: 105px;
   padding: 0;
 }
 
@@ -550,16 +550,14 @@ main {
   z-index: 3;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 78px;
 
   font-size: 0;
@@ -647,11 +645,11 @@ main {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .tracker img {
@@ -685,11 +683,11 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 560px;
 }
 
@@ -697,17 +695,15 @@ main {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 560px;
   min-height: 486px;
 }
@@ -750,9 +746,10 @@ main {
   margin-top: 80px;
   margin-bottom: 20px;
 
+  font-weight: 900;
   font-size: 47px;
   line-height: 56px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0.014em;
   word-wrap: break-word;
@@ -761,7 +758,7 @@ main {
 .slider-item p {
   width: 490px;
   margin: 0;
-  margin-bottom: 42px;
+  margin-bottom: 40px;
 
   word-wrap: break-word;
 }
@@ -785,12 +782,12 @@ main {
 .product-features td {
   margin: 0;
   padding: 0;
-  padding-top: 10px;
+  padding-top: 5px;
 
-  font-weight: 300;
+  font-weight: 100;
   font-size: 13px;
   line-height: 20px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgb(70, 70, 70);
 }
 
@@ -802,14 +799,15 @@ main {
   font-weight: 300;
   font-size: 36px;
   line-height: 48px;
-  font-family: "gilroylight", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 }
 
 .main-catalog {
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 }
 
@@ -819,7 +817,7 @@ main {
   display: flex;
   margin-bottom: 180px;
   padding: 0;
-
+flex-wrap: wrap;
   list-style: none;
 }
 
@@ -828,7 +826,10 @@ main {
 }
 
 .main-catalog span {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 160px;
   height: 160px;
   margin-bottom: 33px;
@@ -836,14 +837,24 @@ main {
   background-color: rgb(247, 226, 150);
 }
 
+.main-catalog .align-end {
+  align-items: flex-end;
+}
+
 .main-catalog .no-wrap {
   display: block;
 }
 
-.catalog-li:not(:last-of-type) {
-  margin-right: 40px;
+.catalog-li {
+  width: 160px;
 }
-
+.catalog-li:not(:nth-of-type(6n)) {
+margin-righT: 40px;
+}
+/* .catalog-li:not(:last-of-type) {
+  margin-right: 40px;
+} */
+/*
 .catalog-li span::before {
   content: " ";
 
@@ -879,15 +890,16 @@ main {
 .catalog-li:nth-of-type(6) span::before {
   background-image: url("../img/icons/popular-6.svg");
 }
-
+*/
 .catalog-li:active a,
-.catalog-li:active span::before {
+.catalog-li:active .no-wrap,
+.catalog-li:active img {
   opacity: 0.3;
 }
 
-.catalog-li span:hover,
-.catalog-li span:focus,
-.catalog-li span:active {
+.catalog-li a:hover span,
+.catalog-li a:focus span,
+.catalog-li a:active span {
   background-color: rgb(240, 197, 46);
 }
 
@@ -907,8 +919,8 @@ main {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   width: 1160px;
   margin: 0 auto;
   margin-top: -100px;
@@ -931,8 +943,8 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 284px;
@@ -943,6 +955,10 @@ main {
   padding-top: 80px;
 
   border-right: 7px solid rgb(0, 0, 0);
+}
+
+.service-navigation .link {
+  padding: 8px 0;
 }
 
 .service-button {
@@ -956,7 +972,7 @@ main {
 }
 
 .service-button:not(:last-of-type) {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .service-description {
@@ -984,12 +1000,13 @@ main {
 
   margin: 0;
   margin-top: 73px;
-  margin-bottom: 34px;
+  margin-bottom: 33px;
   padding: 0;
 
+  font-weight: 900;
   font-size: 47px;
   line-height: 48px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0.04em;
 }
@@ -1119,12 +1136,12 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .brandlist-item:not(:last-child) {
@@ -1192,16 +1209,18 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   margin-bottom: 102px;
 }
 
 .info-contacts .link {
   width: 260px;
+
+  cursor: pointer;
 }
 
-.info-contacts button {
+.info-contacts .link {
   background-color: transparent;
   border: none;
 }
@@ -1211,20 +1230,18 @@ main {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   min-height: 550px;
 
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
 }
 
 .info {
@@ -1242,9 +1259,10 @@ main {
   margin-top: 50px;
   margin-bottom: 28px;
 
+  font-weight: 900;
   font-size: 47px;
   line-height: 48px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0;
 }
@@ -1253,7 +1271,7 @@ main {
 .contacts h3::before {
   content: "";
   position: absolute;
-  top: -53px;
+  top: -52px;
   left: 0;
 
   display: table;
@@ -1264,7 +1282,7 @@ main {
 }
 
 .info p {
-  max-width: 460px;
+  max-width: 475px;
 }
 
 .contacts p {
@@ -1272,7 +1290,7 @@ main {
 }
 
 .couriers {
-  margin: 24px 0 0 20px;
+  margin: 50px 0 0 20px;
   padding: 0;
 
   list-style: circle;
@@ -1281,9 +1299,10 @@ main {
 .couriers a {
   margin-left: 15px;
 
+  font-weight: 900;
   font-size: 16px;
   line-height: 40px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 }
 
@@ -1298,6 +1317,8 @@ main {
 
 .contacts .mapping {
   padding: 0;
+
+  cursor: pointer;
 }
 
 .main-footer {
@@ -1313,19 +1334,19 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 1160px;
   min-height: 323px;
   margin: 0 auto;
-  padding: 65px 0;
+  padding: 62px 0;
 
   font-size: 15px;
   line-height: 30px;
@@ -1335,18 +1356,19 @@ main {
   background-color: inherit;
 }
 
-.footer-navigation a {
-  color: rgb(255, 255, 255);
-}
-
 .footer-navigation ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
 
   list-style: none;
+}
+
+.footer-navigation a {
+  color: rgb(255, 255, 255);
 }
 
 .footer-navigation .footer-logo:hover,
@@ -1360,27 +1382,42 @@ main {
 
 .footer-navigation .footer-user-navigation {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 25px;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.footer-user-navigation > li {
+  width: 50%;
 }
 
 .footer-user-navigation ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-a[href="login-link.html"] + svg {
-  margin-right: 10px;
+.footer-user-navigation li:not(:first-child):not(.login-out) {
+  margin-left: 40px;
 }
 
-.footer-user-navigation li:not(:first-child) {
-  margin-left: 43px;
+.footer-user-navigation .login-link {
+  margin-right: 4px;
 }
 
-.footer-user-navigation .login-out {
-  position: relative;
-  left: -25px;
+.footer-user-navigation svg {
+  margin-right: 6px;
+
+  fill: rgb(240, 197, 46);
+}
+
+.login-link svg:first-child {
+  margin-right: 8px;
+}
+
+.login-link + .login-out {
+  margin-right: 3px;
+  margin-left: 15px;
 
   opacity: 0.3;
 }
@@ -1407,18 +1444,13 @@ a[href="login-link.html"] + svg {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.footer-user-navigation svg {
-  margin-right: 5px;
 
-  fill: rgb(240, 197, 46);
-}
-
-.footer-user-navigation a:hover svg,
-.footer-user-navigation a:focus svg {
+.footer-icon:hover svg,
+.footer-icon:focus svg {
   opacity: 0.6;
 }
 
-.footer-user-navigation a:active svg {
+.footer-icon:active svg {
   opacity: 0.3;
 }
 
@@ -1429,15 +1461,15 @@ a[href="login-link.html"] + svg {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .site-navigation-wrapper.social {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 60px;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 58px;
 }
 
 .site-navigation-wrapper  p {
@@ -1451,31 +1483,35 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 250px;
   height: 20px;
+
+  letter-spacing: 0;
 }
 
 .footer-phone {
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .footer-site-navigation {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 440px;
 }
 
 .footer-site-navigation li:not(:last-child) {
-  margin-right: 35px;
+  margin-right: 33px;
 }
 
 .footer-site-navigation a {
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -1491,18 +1527,21 @@ a[href="login-link.html"] + svg {
 
 .footer-rect {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
-
-
+.footer-social {
+  flex-wrap: wrap;
+  max-width: 440px;
+}
 
 .footer-social li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0;
-  margin-right: 20px;
+  margin-right: 23px;
+  margin-bottom: 10px;
   padding: 0;
 }
 
@@ -1530,8 +1569,8 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   width: 60px;
   height: 35px;
 }
@@ -1646,12 +1685,10 @@ a[href="login-link.html"] + svg {
   z-index: 10;
 
   -webkit-box-sizing: border-box;
-
           box-sizing: border-box;
   width: 960px;
 
   -webkit-box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
-
           box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -1675,7 +1712,6 @@ a[href="login-link.html"] + svg {
   display: block;
 
   -webkit-animation: bounce 0.6s;
-
           animation: bounce 0.6s;
 }
 
@@ -1690,13 +1726,13 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
@@ -1710,13 +1746,20 @@ a[href="login-link.html"] + svg {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   padding: 15px 20px;
 }
 
 .textarea-item {
   width: 760px;
+}
+
+.write-item input[placeholder],
+.textarea-item textarea[placeholder] {
+  font-weight: 300;
+  font-family: "open_sans", "Arial", sans-serif;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .textarea-item textarea {
@@ -1765,9 +1808,10 @@ a[href="login-link.html"] + svg {
 }
 
 .modal label {
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 }
 
@@ -1798,6 +1842,7 @@ a[href="login-link.html"] + svg {
 .modal input:focus:invalid,
 .modal textarea:focus:invalid {
   background-color: rgb(246, 218, 218);
+  border: none;
 }
 
 .modal .link {
@@ -1822,8 +1867,8 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 .inner-page h1 {
@@ -1831,10 +1876,10 @@ a[href="login-link.html"] + svg {
   margin-bottom: 20px;
   padding: 0;
 
-  font-weight: bold;
+  font-weight: 900;
   font-size: 47px;
   line-height: 48px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0.01em;
 }
@@ -1844,17 +1889,17 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 70px;
   margin: 0;
 
-  font-weight: bold;
+  font-weight: 900;
   font-size: 16px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -1863,6 +1908,7 @@ a[href="login-link.html"] + svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   margin-bottom: 43px;
   padding: 0;
@@ -1874,7 +1920,6 @@ a[href="login-link.html"] + svg {
   position: relative;
 
   display: inline-block;
-  height: 30px;
   margin-right: 38px;
 
   vertical-align: middle;
@@ -1898,20 +1943,20 @@ a[href="login-link.html"] + svg {
 }
 
 .breadcrumbs span {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 14px;
   line-height: 24px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgba(0, 0, 0, 0.3);
   letter-spacing: 0.014em;
   letter-spacing: 0.01em;
 }
 
 .breadcrumbs a {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 14px;
   line-height: 24px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgba(0, 0, 0, 0.3);
   letter-spacing: 0.014em;
   letter-spacing: 0.01em;
@@ -1931,8 +1976,8 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 1160px;
   margin: 0 auto;
   padding-left: 60px;
@@ -1944,14 +1989,11 @@ a[href="login-link.html"] + svg {
 
   background-image: -webkit-gradient(linear, left top, right top, from(rgb(220, 220, 220)), color-stop(50%, rgb(220, 220, 220)), color-stop(50%, rgb(235, 235, 235)), to(rgb(235, 235, 235))),
   -webkit-gradient(linear, left top, right top, from(rgb(238, 238, 238)), color-stop(50%, rgb(238, 238, 238)), color-stop(50%, rgb(255, 255, 255)), to(rgb(255, 255, 255)));
-
   background-image: -webkit-linear-gradient(left, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
   -webkit-linear-gradient(left, rgb(238, 238, 238), rgb(238, 238, 238) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255));
-
-  background-image: -o-linear-gradient(left, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
+  background-image:      -o-linear-gradient(left, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
   -o-linear-gradient(left, rgb(238, 238, 238), rgb(238, 238, 238) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255));
-
-  background-image: linear-gradient(to right, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
+  background-image:         linear-gradient(to right, rgb(220, 220, 220), rgb(220, 220, 220) 50%, rgb(235, 235, 235) 50%, rgb(235, 235, 235)),
   linear-gradient(to right, rgb(238, 238, 238), rgb(238, 238, 238) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255));
   background-repeat: no-repeat, no-repeat;
   background-size: 100% 70px, 100% 100%;
@@ -1965,13 +2007,9 @@ a[href="login-link.html"] + svg {
 .filters fieldset {
   margin: 0;
   padding: 0;
-  padding-bottom: 26px;
+  padding-bottom: 28px;
 
   border: none;
-}
-
-.filters fieldset:not(:first-child) {
-  margin-bottom: 5px;
 }
 
 .filters form {
@@ -1981,14 +2019,14 @@ a[href="login-link.html"] + svg {
 .filters legend {
   width: 200px;
   margin: 0;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   padding: 0;
   padding-top: 12px;
 
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0.01em;
 
@@ -1997,7 +2035,7 @@ a[href="login-link.html"] + svg {
 
 .range-lifter {
   width: 200px;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .range-controls {
@@ -2046,22 +2084,27 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 
   font-size: 0;
 }
 
 .price-controls label {
+  font-weight: 100;
   font-size: 14px;
   line-height: 40px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
 
   opacity: 0.2;
 }
 
 .min-price {
   margin-right: 63px;
+}
+
+.color  legend {
+  margin-bottom: 18px;
 }
 
 .filter-item {
@@ -2086,12 +2129,12 @@ a[href="login-link.html"] + svg {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  padding-left: 40px;
+  padding-left: 38px;
 
-  font-weight: 300;
+  font-weight: 100;
   font-size: 14px;
   line-height: 40px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   letter-spacing: 0.014em;
   letter-spacing: 0.01em;
@@ -2101,7 +2144,7 @@ a[href="login-link.html"] + svg {
   content: "";
   position: absolute;
   top: calc(50% - 11px);
-  left: 0;
+  left: -2px;
 
   width: 27px;
   height: 23px;
@@ -2133,31 +2176,33 @@ a[href="login-link.html"] + svg {
 .filter-item input[type="radio"] + label::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: -1px;
 
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 
   vertical-align: middle;
 
   border: 4px solid rgb(0, 0, 0);
   border-radius: 50%;
+  transform: translateY(-55%);
 }
 
 .filter-item input[type="radio"]:checked + label::after {
   content: "";
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 50%;
+  left: 0;
   z-index: 5;
 
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 
   background-color: rgb(0, 0, 0);
   border-radius: 50%;
+  transform: translate(70%, -65%);
 }
 
 .filter-item input[type="radio"]:checked + label:active::after {
@@ -2167,15 +2212,16 @@ a[href="login-link.html"] + svg {
 .filter-item input[type="radio"] + label:active::after {
   content: "";
   position: absolute;
-  top: 9px;
-  left: 9px;
+  top: 50%;
+  left: 0;
   z-index: 5;
 
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 
   background-color: rgb(0, 0, 0);
   border-radius: 50%;
+  transform: translate(70%, -65%);
 }
 
 .filter-item input:disabled + label,
@@ -2211,8 +2257,8 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   width: 830px;
   margin: 0;
   padding: 0;
@@ -2226,8 +2272,8 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 100%;
@@ -2251,10 +2297,6 @@ a[href="login-link.html"] + svg {
   margin-right: 50px;
 }
 
-.sortings .sort-order {
-  margin-left: auto;
-}
-
 .inner-page .sort-type,
 .inner-page .sort-order {
   display: -webkit-box;
@@ -2262,13 +2304,19 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.sortings .sort-order {
+  flex-wrap: nowrap;
+  min-width: 45px;
+  margin-left: auto;
 }
 
 .sort-type li:not(:last-child) {
@@ -2276,9 +2324,10 @@ a[href="login-link.html"] + svg {
 }
 
 .sort-type a {
+  font-weight: 100;
   font-size: 14px;
   line-height: 18px;
-  font-family: "open_sanslight", "Arial", sans-serif;
+  font-family: "open_sans", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   text-transform: none;
   letter-spacing: 0.015em;
@@ -2288,8 +2337,8 @@ a[href="login-link.html"] + svg {
 
 .sort-order {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 40px;
 }
 
@@ -2316,15 +2365,15 @@ a[href="login-link.html"] + svg {
 .sort-type a:visited {
   opacity: 1;
 }
-
-.inner-page .catalog ul {
+/*
+.inner-page ul {
   margin: 0;
   padding: 0;
 
   list-style: none;
 
   border: none;
-}
+} */
 
 .inner-catalog {
   -webkit-box-sizing: border-box;
@@ -2339,13 +2388,13 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 
@@ -2358,8 +2407,8 @@ a[href="login-link.html"] + svg {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   margin: 0;
   padding: 0;
 }
@@ -2376,25 +2425,23 @@ a[href="login-link.html"] + svg {
   z-index: 1;
 
   display: -webkit-inline-box;
-
   display: -ms-inline-flexbox;
-
   display: inline-flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 60px;
   height: 60px;
 
-  font-weight: 800;
+  font-weight: 900;
   font-size: 14px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
   text-transform: uppercase;
   letter-spacing: 0.7px;
@@ -2411,10 +2458,10 @@ a[href="login-link.html"] + svg {
 .catalog-item h3 {
   max-width: 260px;
 
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   letter-spacing: 0.2px;
 }
 
@@ -2435,25 +2482,25 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   width: 100%;
   margin-top: 15px;
   margin-bottom: 28px;
 }
 
 .catalog-item:last-child .prices {
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 
 .catalog-item-price {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  font-family: "gilroyLight", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(70, 70, 70);
   letter-spacing: 0.2px;
 }
@@ -2472,17 +2519,15 @@ a[href="login-link.html"] + svg {
   z-index: 2;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 360px;
   height: 380px;
 
@@ -2502,6 +2547,9 @@ a[href="login-link.html"] + svg {
 .item-hover:hover {
   opacity: 1;
 }
+.item-hover button {
+  cursor: pointer;
+}
 
 .item-hover button:last-child {
   color: rgba(0, 0, 0, 0.5);
@@ -2513,7 +2561,7 @@ a[href="login-link.html"] + svg {
 }
 
 .item-hover button:last-child:active {
-  color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .pagination-list {
@@ -2521,22 +2569,22 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
   height: 70px;
-  margin-bottom: 75px;
+  margin-bottom: 77px;
 
   background-color: rgb(235, 235, 235);
 }
 
 .pagination-list a {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 16px;
   line-height: 24px;
-  font-family: "gilroyextrabold", "Arial", sans-serif;
+  font-family: "gilroy", "Arial", sans-serif;
   color: rgb(0, 0, 0);
 }
 
@@ -2545,8 +2593,8 @@ a[href="login-link.html"] + svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 
@@ -2583,7 +2631,7 @@ a[href="login-link.html"] + svg {
 
 .pagination-item a {
   display: inline-block;
-  padding: 23px 15px;
+  padding: 28px 13px 26px 18px;
 
   vertical-align: middle;
 
