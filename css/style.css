@@ -815,9 +815,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 180px;
   padding: 0;
-flex-wrap: wrap;
+
   list-style: none;
 }
 
@@ -832,7 +833,7 @@ flex-wrap: wrap;
   align-items: center;
   width: 160px;
   height: 160px;
-  margin-bottom: 33px;
+  margin-bottom: 34px;
 
   background-color: rgb(247, 226, 150);
 }
@@ -849,7 +850,7 @@ flex-wrap: wrap;
   width: 160px;
 }
 .catalog-li:not(:nth-of-type(6n)) {
-margin-righT: 40px;
+  margin-righT: 40px;
 }
 /* .catalog-li:not(:last-of-type) {
   margin-right: 40px;
@@ -1128,23 +1129,25 @@ margin-righT: 40px;
 }
 
 .brands {
-  margin-bottom: 87px;
+  margin-bottom: 85px;
 }
 
 .brands-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  width: 1160px;
+  margin: 0 auto;
   padding: 0;
+
   list-style: none;
-  flex-wrap: wrap;
 }
 
-.brandlist-item:not(:last-child) {
+.brandlist-item:not(:nth-of-type(4n)) {
   margin-right: 40px;
 }
 
@@ -1346,7 +1349,7 @@ margin-righT: 40px;
   max-width: 1160px;
   min-height: 323px;
   margin: 0 auto;
-  padding: 62px 0;
+  padding: 65px 0;
 
   font-size: 15px;
   line-height: 30px;
@@ -1469,7 +1472,7 @@ margin-righT: 40px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 58px;
+  margin-top: 56px;
 }
 
 .site-navigation-wrapper  p {
@@ -1531,7 +1534,9 @@ margin-righT: 40px;
   align-self: center;
 }
 .footer-social {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
   max-width: 440px;
 }
 
@@ -1540,8 +1545,7 @@ margin-righT: 40px;
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0;
-  margin-right: 23px;
-  margin-bottom: 10px;
+  margin-right: 24px;
   padding: 0;
 }
 
@@ -2546,6 +2550,28 @@ margin-righT: 40px;
 
 .item-hover:hover {
   opacity: 1;
+}
+
+.item-hover:focus {
+  opacity: 1;
+  outline-width: 5px;
+  outline-style: auto;
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+}
+
+.link:focus ~ .item-hover {
+  opacity: 1;
+}
+
+.item-hover button:focus{
+  outline-width: 5px;
+  outline-style: auto;
+  outline-color: rgb(77, 144, 254);
+  outline-offset: -2px;
+}
+
+/* я не могу понять, как сделать чтоб при фокусе на кнопки в скрытом родителе родитель тоже переставал быть скрытым */
 }
 .item-hover button {
   cursor: pointer;
