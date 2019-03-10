@@ -305,12 +305,11 @@ a {
 }
 
 .header-user-navigation li:not(:first-child) {
-  margin-left: 37px;
+  margin-left: 40px;
 }
 
 .header-user-navigation .login-out {
   position: relative;
-  left: -25px;
 
   opacity: 0.3;
 }
@@ -796,7 +795,7 @@ a {
 }
 
 .slider-item p {
-  width: 490px;
+  width: 500px;
   margin: 0;
   margin-bottom: 40px;
 
@@ -1228,18 +1227,18 @@ a {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin-bottom: 102px;
+  margin-bottom: 105px;
 }
 
 .info-contacts .link {
+  position: absolute;
+  bottom: -25px;
+
   width: 260px;
 
-  cursor: pointer;
-}
-
-.info-contacts .link {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .info,
@@ -1307,7 +1306,7 @@ a {
 }
 
 .couriers {
-  margin: 50px 0 0 20px;
+  margin: 53px 0 0 20px;
   padding: 0;
 
   list-style: circle;
@@ -1325,11 +1324,6 @@ a {
 
 .info-contacts .thumb {
   margin-top: 25px;
-}
-
-.info-contacts .link {
-  position: absolute;
-  bottom: -23px;
 }
 
 .contacts .mapping {
@@ -1404,7 +1398,7 @@ a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .footer-user-navigation > li {
@@ -1419,6 +1413,9 @@ a {
   justify-content: flex-end;
 }
 
+.footer-user-navigation li {
+  line-height: 26px;
+}
 .footer-user-navigation li:not(:first-child):not(.login-out) {
   margin-left: 40px;
 }
@@ -1569,7 +1566,7 @@ a {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0;
-  margin-right: 24px;
+  margin-right: 23px;
   padding: 0;
 }
 
