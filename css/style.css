@@ -862,11 +862,26 @@ a {
   list-style: none;
 }
 
-.main-catalog a {
+.catalog-li {
+  width: 160px;
+}
+
+.catalog-li:not(:nth-of-type(6n)) {
+  margin-righT: 40px;
+}
+
+.catalog-li a {
+  display: inline-block;
+
+  vertical-align: middle;
   color: rgb(0, 0, 0);
 }
 
-.main-catalog span {
+.catalog-li a[href="trackers.html"] {
+  letter-spacing: 0;
+}
+
+.catalog-li span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -887,33 +902,35 @@ a {
   background-color: rgb(247, 226, 150);
 }
 
-.main-catalog .align-end {
+.catalog-li .align-end {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
 }
 
-.main-catalog .no-wrap {
+.catalog-li .no-wrap {
   display: block;
 }
 
-.catalog-li {
-  width: 160px;
-}
-.catalog-li:not(:nth-of-type(6n)) {
-  margin-righT: 40px;
+.catalog-a:hover span,
+.catalog-a:focus span,
+.catalog-a:active span {
+  background-color: rgb(240, 197, 46);
 }
 
-.catalog-li:active a,
-.catalog-li:active .no-wrap,
-.catalog-li:active img {
+.catalog-li a:focus {
+  -webkit-box-shadow: inset 1px 1px 0 0  rgb(77, 144, 254),
+  inset -1px -1px 0 0  rgb(77, 144, 254);
+          box-shadow: inset 1px 1px 0 0  rgb(77, 144, 254),
+  inset -1px -1px 0 0  rgb(77, 144, 254);
+}
+
+.catalog-a:active img {
   opacity: 0.3;
 }
 
-.catalog-li a:hover > span,
-.catalog-li a:focus > span,
-.catalog-li a:active > span {
-  background-color: rgb(240, 197, 46);
+.catalog-li a:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .services {
